@@ -1,0 +1,14 @@
+.body {
+  background-color: #202020;
+}
+
+.page {
+  font-family: "Inter", Arial, sans-serif;
+  max-width: 1140px;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  margin: 0 auto;
+  color: #fff;
+}
+
+*{outline: 1px solid red;}

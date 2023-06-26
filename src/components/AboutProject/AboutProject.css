@@ -1,0 +1,95 @@
+.about-project {
+  background-color: #202020;
+  padding: 110px 0;
+  /* box-sizing: border-box; */
+}
+
+.about-project__title {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  margin: 0 0 70px;
+  padding: 0 0 23px;
+  border-bottom: 1px solid #DADADA;
+  letter-spacing: -4%;
+}
+
+.about-project__description {
+  margin: 0 auto 110px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-project__block {
+  max-width: 550px;
+  width: 100%;
+}
+
+.about-project__subtitle {
+  margin: 0 0 26px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 20px;
+letter-spacing: -0.8px;
+
+}
+
+.about-project__text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.about-project__scale {
+  width: 100%;
+  /* display: grid; */
+  /* grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content); /* Две колонки */
+  /* grid-template-rows: repeat(2, auto); Две строки */
+  /* gap: 14px 0; Расстояние между элементами */
+}
+
+.about-project__item {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0;
+}
+
+.about-project__item_type_first-block {
+  width: 228px;
+  color: #000000;
+  background-color: #3DDC84;
+  grid-column: 1 / 2; /* Отображаем элемент about-project__item_type_first-block в первой колонке */
+  grid-row: 1 / 2; /* И в первой строке */
+}
+
+.about-project__item_type_second-block {
+  width: 912px;
+  background-color: #303030;
+  grid-column: 2 / 3; /* Отображаем элемент about-project__item_type_second-block во второй колонке */
+  grid-row: 1 / 2; /* И в первой строке */
+}
+
+.about-project__theme {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  text-align: center;
+  color: #8B8B8B;
+}
+
+.about-project__theme:nth-of-type(1) {
+  grid-column: 1 / 2; /* Отображаем первый элемент about-project__theme в первой колонке */
+  grid-row: 2 / 3; /* И во второй строке */
+}
+
+.about-project__theme:nth-of-type(2) {
+  grid-column: 2 / 3; /* Отображаем второй элемент about-project__theme во второй колонке */
+  grid-row: 2 / 3; /* И во второй строке */
+}

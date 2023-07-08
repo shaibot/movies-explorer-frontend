@@ -1,7 +1,7 @@
 .about-project {
   background-color: #202020;
-  padding: 110px 0;
-  /* box-sizing: border-box; */
+  padding: 110px 70px;
+  box-sizing: border-box;
 }
 
 .about-project__title {
@@ -11,28 +11,34 @@
   margin: 0 0 70px;
   padding: 0 0 23px;
   border-bottom: 1px solid #DADADA;
-  letter-spacing: -4%;
+  letter-spacing: -0.88px;
 }
 
 .about-project__description {
-  margin: 0 auto 110px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(319px, 500px));
   justify-content: space-between;
+  gap: 40px;
 }
 
 .about-project__block {
-  max-width: 550px;
   width: 100%;
+  max-width: 500px;
+  margin-bottom: 110px;
+  /* padding-right: calc(min(197px, max(30px, calc((100% - 227px) / 2)))); */
+}
+
+.about-project__block:last-of-type {
+  padding-right: 0;
+  margin-right: 0;
 }
 
 .about-project__subtitle {
   margin: 0 0 26px;
-  font-size: 20px;
   font-weight: 400;
   line-height: 24px;
   font-size: 20px;
 letter-spacing: -0.8px;
-
 }
 
 .about-project__text {
@@ -44,10 +50,15 @@ letter-spacing: -0.8px;
 
 .about-project__scale {
   width: 100%;
-  /* display: grid; */
-  /* grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content); /* Две колонки */
-  /* grid-template-rows: repeat(2, auto); Две строки */
-  /* gap: 14px 0; Расстояние между элементами */
+  display: flex;
+}
+
+.about-project__scale-block-backend {
+width: 25%;
+}
+
+.about-project__scale-block-frontend {
+  width: 75%;
 }
 
 .about-project__item {
@@ -59,21 +70,16 @@ letter-spacing: -0.8px;
   justify-content: center;
   min-height: 36px;
   padding: 0;
+  margin: 0 auto 14px;
 }
 
 .about-project__item_type_first-block {
-  width: 228px;
   color: #000000;
   background-color: #3DDC84;
-  grid-column: 1 / 2; /* Отображаем элемент about-project__item_type_first-block в первой колонке */
-  grid-row: 1 / 2; /* И в первой строке */
 }
 
 .about-project__item_type_second-block {
-  width: 912px;
   background-color: #303030;
-  grid-column: 2 / 3; /* Отображаем элемент about-project__item_type_second-block во второй колонке */
-  grid-row: 1 / 2; /* И в первой строке */
 }
 
 .about-project__theme {
@@ -82,14 +88,26 @@ letter-spacing: -0.8px;
   line-height: 17px;
   text-align: center;
   color: #8B8B8B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-project__theme:nth-of-type(1) {
-  grid-column: 1 / 2; /* Отображаем первый элемент about-project__theme в первой колонке */
-  grid-row: 2 / 3; /* И во второй строке */
-}
+@media screen and (max-width: 800px){
+  .about-project__description {
+gap: 30px;
+  }
+  .about-project__block {
+    margin-bottom: 93px;
+    max-width: 319px;
+margin-right: 40px;
+  }
+  .about-project__title {
+    font-size: 20px;
+  }
 
-.about-project__theme:nth-of-type(2) {
-  grid-column: 2 / 3; /* Отображаем второй элемент about-project__theme во второй колонке */
-  grid-row: 2 / 3; /* И во второй строке */
+  .about-project__subtitle{
+    font-size: 12px;
+line-height: 18px;
+  }
 }

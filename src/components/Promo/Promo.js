@@ -1,13 +1,11 @@
 import React from 'react';
 import LandingLogo from '../../images/landing-logo.svg';
 import './Promo.css';
-import PromoHeader from '../PromoHeader/PromoHeader';
 
 function Promo() {
 
   return (
 <>
-    <PromoHeader />
     <section className="promo">
       <div className="promo__description">
         <h1 className="promo__title">

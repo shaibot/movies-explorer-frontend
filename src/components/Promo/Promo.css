@@ -1,17 +1,16 @@
 .promo {
-  max-width: 1280px;
   width: 100%;
-  margin: 0 -70px;
+  margin: 0 auto;
   padding: 75px 70px;
   background-color: #073042;
   display: flex;
-justify-content: space-between;
-/* box-sizing: border-box; */
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .promo__description {
-max-width: 640px;
-margin: 0;
+  max-width: 640px;
+  margin: 0;
 }
 
 .promo__title {
@@ -52,10 +51,31 @@ margin: 0;
   padding: 0;
 }
 
-/* @media screen {
+@media screen and (max-width: 1005px) {
   .promo {
-    margin: 0 -30px;
     display: grid;
-    gap: 100px;
+    grid-template-columns: 1fr; /* Одна колонка */
+    grid-template-rows: auto auto; /* Две строки с автоматической высотой */
+    gap: 48px; /* Гэп между строками */
   }
-} */
+
+  .promo__logo {
+    grid-row: 1 / span 1; /* Расположение в первой строке */
+    margin: 0 auto;
+  }
+
+  .promo__description {
+    grid-row: 2 / span 1; /* Расположение во второй строке */
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .promo__title {
+    width: 680px;
+  }
+
+  .promo__learn-more {
+    margin: 0 auto 146px;
+    max-width: 260px;;
+  }
+}

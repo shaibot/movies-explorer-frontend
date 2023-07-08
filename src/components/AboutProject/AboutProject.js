@@ -26,13 +26,13 @@ function AboutProject() {
         </div>
       </div>
       <div className="about-project__scale">
-        <div className="about-project__scale-block">
+        <div className="about-project__scale-block-backend">
           <p className="about-project__item about-project__item_type_first-block">
             1&nbsp;неделя
           </p>
           <span className="about-project__theme">Back-end</span>
         </div>
-        <div className="about-project__scale-block">
+        <div className="about-project__scale-block-frontend">
           <p className="about-project__item about-project__item_type_second-block">
             4&nbsp;недели
           </p>

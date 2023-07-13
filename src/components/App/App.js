@@ -8,14 +8,19 @@ import Profile from '../Profile/Profile';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import Footer from '../Footer/Footer';
-
+import './App.css'
+import Header from '../Header/Header';
 
 function App() {
   return (
     <div className="body">
       <div className="page">
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={
+            <><Header />
+            <Main />
+            <Footer /></>
+            } />
             <Route path="/movies" element={<Movies />} />
             <Route path="/saved-movies" element={<SavedMovies />} />
             <Route path="/profile" element={<Profile />} />

@@ -3,12 +3,12 @@ import './AboutProject.css';
 
 function AboutProject() {
   return (
-    <section className="about-project">
-      <h2 className="about-project__title">О проекте</h2>
+    <section className="section about-project">
+      <h2 className="section__title">О проекте</h2>
       <div className="about-project__description">
         <div className="about-project__block">
           <h3 className="about-project__subtitle">
-            Дипломный проект включал 5&nbsp;этапов
+            Дипломный проект включал 5 этапов
           </h3>
           <p className="about-project__text">
             Составление плана, работу над бэкендом, вёрстку, добавление
@@ -17,7 +17,7 @@ function AboutProject() {
         </div>
         <div className="about-project__block">
           <h3 className="about-project__subtitle">
-            На&nbsp;выполнение диплома ушло 5&nbsp;недель
+            На&nbsp;выполнение диплома ушло 5 недель
           </h3>
           <p className="about-project__text">
             У&nbsp;каждого этапа был мягкий и&nbsp;жёсткий дедлайн, которые

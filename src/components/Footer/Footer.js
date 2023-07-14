@@ -3,12 +3,12 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="section footer">
       <div className="footer__description">
         Учебный проект Яндекс.Практикум х&nbsp;BeatFilm.
       </div>
       <div className="footer__navigation">
-        <p className="footer__year">&copy;&nbsp;2023</p>
+        <p className="footer__year">&copy;&nbsp;2020</p>
         <nav className="footer__naviganion-links">
           <ul className="footer__list-links">
             <li>

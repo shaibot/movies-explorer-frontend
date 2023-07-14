@@ -51,11 +51,10 @@
   padding: 0;
 }
 
-@media screen and (max-width: 1005px) {
+@media screen and (max-width: 890px) {
   .promo {
-    display: grid;
-    grid-template-columns: 1fr; /* Одна колонка */
-    grid-template-rows: auto auto; /* Две строки с автоматической высотой */
+    padding: 140px 70px 76px;
+    flex-direction: column-reverse;
     gap: 48px; /* Гэп между строками */
   }
 
@@ -71,11 +70,16 @@
   }
 
   .promo__title {
-    width: 680px;
+    width: 100%;
+    margin-bottom: 22px;
+    max-width: 680px;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
   }
 
   .promo__learn-more {
-    margin: 0 auto 146px;
-    max-width: 260px;;
+    margin: 0 auto 92px;
+    max-width: 260px;
   }
 }

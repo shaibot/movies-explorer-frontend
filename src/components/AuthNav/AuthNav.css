@@ -1,0 +1,31 @@
+.nav {
+  width: 100%;
+  max-width: 183px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+}
+
+.nav__btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  width: 77px;
+  height: 16px;
+  padding: 0;
+}
+
+.nav__btn_type_login {
+  border-radius: 3px;
+  background: #3ddc84;
+  color: #000;
+  border: none;
+  padding: 0;
+  width: 76px;
+  height: 32px;
+}

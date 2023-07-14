@@ -8,14 +8,13 @@ import './Main.css';
 
 function Main() {
   return (
-    <section className="main">
-      <PromoHeader />
-        <Promo />
-        <AboutProject />
-        <Techs />
-        <AboutMe />
-        <Portfolio />
-    </section>
+    <>
+      <Promo />
+      <AboutProject />
+      <Techs />
+      <AboutMe />
+      <Portfolio />
+    </>
   );
 }
 

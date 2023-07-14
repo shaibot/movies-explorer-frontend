@@ -1,13 +1,12 @@
 import React from 'react';
 import SearchForm from '../SearchForm/SearchForm.js';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
-import More from '../More/More.js';
 import './Movies.css'
-import '../Content/Content.css'
+import More from '../More/More.js';
 
 function Movies() {
   return (
-      <main className="movies-content content">
+      <main className="movies-content">
         <SearchForm />
         <MoviesCardList />
         <More />

@@ -7,8 +7,9 @@
 
 .movies-card__image {
   width: 100%;
+  min-height: 168px;
   object-fit: fill;
-  margin: 0 0 14px;
+  margin: 0 0 28px;
 }
 
 .movies-card__info {
@@ -33,6 +34,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  display: none;
 }
 
 .movies-card__like_active {
@@ -50,12 +52,26 @@
 }
 
 .movies-card__duration {
-  color: #8B8B8B;
+  display: inline-block;
+  vertical-align: middle;
+  color: #8b8b8b;
   font-weight: 400;
   font-size: 11px;
-  line-height: 10px;
+  line-height: 18px;
   margin: 0;
   text-align: center;
-  display: flex;
-  align-items: center;
+  width: 52px;
+  height: 18px;
+  border-radius: 3px;
+  background: #2f2f2f;
+}
+
+@media screen and (max-width: 440px) {
+  .movies-card {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  .movies-card__title {
+    font-size: 12px;
+  }
 }

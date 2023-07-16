@@ -104,7 +104,7 @@ function MoviesCardList() {
   ];
 
   return (
-    <section className="movies-cardlist">
+    <div className="movies-cardlist">
       <MoviesCard imageUrl={moviesData[0].imageUrl} title={moviesData[0].title} duration={moviesData[0].duration} isLiked={moviesData[0].isLiked} onLikeClick={moviesData[0].onLikeClick} />
       <MoviesCard imageUrl={moviesData[1].imageUrl} title={moviesData[1].title} duration={moviesData[1].duration} isLiked={moviesData[1].isLiked} onLikeClick={moviesData[1].onLikeClick} />
       <MoviesCard imageUrl={moviesData[2].imageUrl}title={moviesData[2].title} duration={moviesData[2].duration} isLiked={moviesData[2].isLiked} onLikeClick={moviesData[2].onLikeClick} />
@@ -117,7 +117,7 @@ function MoviesCardList() {
       <MoviesCard imageUrl={moviesData[9].imageUrl} title={moviesData[9].title} duration={moviesData[9].duration} isLiked={moviesData[9].isLiked} onLikeClick={moviesData[9].onLikeClick} />
       <MoviesCard imageUrl={moviesData[10].imageUrl} title={moviesData[10].title} duration={moviesData[10].duration} isLiked={moviesData[10].isLiked} onLikeClick={moviesData[10].onLikeClick} />
       <MoviesCard imageUrl={moviesData[11].imageUrl}title={moviesData[11].title} duration={moviesData[11].duration} isLiked={moviesData[11].isLiked} onLikeClick={moviesData[11].onLikeClick} />
-    </section>
+    </div>
   );
 }
 

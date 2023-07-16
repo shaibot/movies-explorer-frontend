@@ -1,6 +1,10 @@
+import { useEffect } from 'react';
 import './Register.css';
 
-function Register() {
+function Register({setViewHeader}) {
+  useEffect(() => {
+    setViewHeader(false)
+  }, [])
   return (
     <section className="register">
       <h1 className="register__title">Добро пожаловать!</h1>

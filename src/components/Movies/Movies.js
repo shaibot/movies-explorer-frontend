@@ -6,11 +6,11 @@ import More from '../More/More.js';
 
 function Movies() {
   return (
-      <main className="movies-content">
+      <section className="movies-content section">
         <SearchForm />
         <MoviesCardList />
         <More />
-      </main>
+      </section>
   );
 }
 

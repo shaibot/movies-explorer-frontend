@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import headerLogo from '../../images/logo-header.svg';
 import Navigation from '../Navigation/Navigation';
 import './Header.css';
 import AuthNav from '../AuthNav/AuthNav';
 
 function Header({ isLogged }) {
+  const [burger, setBurger] = useState(false)
   return (
     <header className="section header">
       <img
@@ -12,7 +13,9 @@ function Header({ isLogged }) {
         src={headerLogo}
         alt="Логотип в виде латинской С в зеленом круге"
       />
-      {isLogged ? <Navigation /> : <AuthNav />}
+      <div onClick={e => setBurger(true)} className='header__burger'></div>
+      {isLogged ? <Navigation  burger={burger} setBurger={setBurger}/> : <AuthNav burger={burger} setBurger={setBurger} />}
+
     </header>
   );
 }

@@ -2,10 +2,14 @@ import React from 'react';
 import headerLogoProfile from '../../images/profile.svg';
 import './Navigation.css'
 
-function Navigation() {
+function Navigation({burger, setBurger}) {
   return (
-    <section className="header__navigation">
+    <section className={`header__navigation ${burger ? 'burger-active' : ''}`}>
+       <button onClick={() => setBurger(false)} className='close_burger'></button>
       <nav className="header__links">
+      <a className="header__link main-href" href="#">
+          Главная
+        </a>
         <a className="header__link" href="#">
           Фильмы
         </a>

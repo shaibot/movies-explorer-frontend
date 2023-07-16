@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Login.css';
 import Logo from '../../images/logo-header.svg'
 
-function Login() {
+function Login({setViewHeader}) {
+  useEffect(() => {
+    setViewHeader(false)
+  }, [])
   return (
     <section className="login">
       <header className='login__header'>

@@ -11,6 +11,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 import './App.css';
+import '../../blocks/Content/Content.css'
 
 function App() {
   const [isLogged, setIsLogged] = React.useState(false);

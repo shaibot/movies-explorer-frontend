@@ -7,6 +7,7 @@
 
 .techs__title {
   margin-bottom: 90px;
+  padding-bottom: 24px;
 }
 
 .techs__description {
@@ -31,6 +32,7 @@
   letter-spacing: -0.56px;
   text-align: center;
   margin: 0 auto;
+  width: 100%;
 }
 
 .techs__technologies {
@@ -51,33 +53,17 @@
 }
 
 .techs__item {
-  /* width: 90px;
-  height: 60px;
-  background-color: #303030;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: -0.56px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: center; */
-
   width: 90px;
   height: 60px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: inherit;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
   letter-spacing: -0.04em;
-
   border-radius: 10px;
   background-color: #303030;
 }
@@ -115,8 +101,35 @@
   .techs__item {
     width: 84px;
     height: 57px;
-
     font-size: 12px;
     line-height: 15px;
   }
+}
+
+@media screen and (max-width: 400px) {
+.techs__subtitle {
+  font-size: 30px;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  margin-bottom: 24px;
+}
+
+.techs__description {
+  max-width: 292px;
+  margin-bottom: 50px;
+}
+
+.techs__text {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: -0.44px;
+}
+.techs__technologies {
+  max-width: 180px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.techs__item {
+letter-spacing: -0.48px;
+}
 }

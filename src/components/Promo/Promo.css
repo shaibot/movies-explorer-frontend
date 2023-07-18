@@ -1,7 +1,7 @@
 .promo {
   width: 100%;
   margin: 0 auto;
-  padding: 149px 70px;
+  padding: 149px 70px 75px;
   background-color: #073042;
   display: flex;
   justify-content: space-between;
@@ -53,7 +53,7 @@
 
 @media screen and (max-width: 890px) {
   .promo {
-    padding: 140px 70px 76px;
+    padding: 214px 70px 76px;
     flex-direction: column-reverse;
     gap: 48px; /* Гэп между строками */
   }
@@ -81,5 +81,29 @@
   .promo__learn-more {
     margin: 0 auto 92px;
     max-width: 260px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .promo {
+    padding: 145px 10px 30px;
+      gap: 43px;
+  }
+
+  .promo__logo {
+    width: 210px;
+    height: 206px;
+  }
+
+  .promo__title {
+    width: 100%;
+    margin-bottom: 24px;
+    max-width: 300px;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -1.2px;
+  }
+  .promo__learn-more {
+    margin-bottom: 80px;
   }
 }

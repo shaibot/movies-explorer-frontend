@@ -18,3 +18,17 @@
 .header__main {
   background: #202020;
 }
+
+@media screen and (max-width: 400px) {
+.section {
+    padding: 68px 18px 70px;
+}
+
+  .section__title {
+    width: 100%;
+  font-size: 18px;
+  letter-spacing: -0.72px;
+  padding-bottom: 25px;
+  margin-bottom: 60px;
+  }
+}

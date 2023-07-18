@@ -24,6 +24,6 @@ img {
   text-rendering: optimizeLegibility;
   margin: 0 auto;
   color: #fff;
-font-size: 0;
+  font-size: 0;
   background-color: #202020;
 }

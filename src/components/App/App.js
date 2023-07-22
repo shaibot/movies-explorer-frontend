@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
@@ -16,6 +16,14 @@ import '../../blocks/Content/Content.css'
 function App() {
   const [isLogged, setIsLogged] = React.useState(false);
   const [viewHeader, setViewHeader] = useState(true)
+  const location = useLocation();
+
+ // Проверяем, нужно ли отображать Footer на текущей странице
+ const shouldShowFooter =
+ location.pathname !== '/profile' &&
+ location.pathname !== '/signup' &&
+ location.pathname !== '/signin';
+
   return (
     <div className="page">
     { viewHeader &&  <Header isLogged={isLogged} />}
@@ -29,7 +37,7 @@ function App() {
           <Route path="/signup" element={<Register setViewHeader={setViewHeader}/>} />
         </Routes>
       </main>
-      <Footer />
+      {shouldShowFooter && <Footer />}
     </div>
   );
 }

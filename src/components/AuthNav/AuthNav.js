@@ -1,5 +1,4 @@
 import React from 'react';
-import headerLogoProfile from '../../images/profile.svg';
 import './AuthNav.css';
 
 function AuthNav({burger, setBurger}) {

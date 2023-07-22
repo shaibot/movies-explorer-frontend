@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
+import Logo from '../../images/logo-header.svg';
 import './Register.css';
 
-function Register({setViewHeader}) {
+function Register({ setViewHeader }) {
   useEffect(() => {
-    setViewHeader(false)
-  }, [])
+    setViewHeader(false);
+  }, []);
   return (
     <section className="register">
+      <Logo />
       <h1 className="register__title">Добро пожаловать!</h1>
       <form className="register__form">
         <label for="name" className="register__label">
@@ -35,7 +37,7 @@ function Register({setViewHeader}) {
           Зарегистрироваться
         </button>
       </form>
-      <p className='register__login'>
+      <p className="register__login">
         Уже зарегистрированы?{' '}
         <a href="#" className="register__login-link">
           Войти

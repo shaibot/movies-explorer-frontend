@@ -4,40 +4,39 @@ import './Profile.css';
 function Profile() {
   return (
     <>
-    <Header />
     <section className="profile">
       <h2 className="profile__welcome">Привет, Виталий!</h2>
-      <form className="profile__form profile-form">
-        <fieldset className="profile-form__fieldset">
-          <div className='profile-form__input-container'>
-          <label className="profile-form__label" htmlFor="name">
+      <form className="profile__form">
+        <fieldset className="profile__form-fieldset">
+          <div className='profile__form-container'>
+          <label className="profile__form-label" htmlFor="name">
             Имя
           </label>
           <input
-            className="profile-form__input"
+            className="profile__form-input"
             id="name"
             name="name"
             type="text" value="Виталий"
           />
           </div>
-          <div className='profile-form__input-container'>
-          <label className="profile-form__label" htmlFor="email">
+          <div className='profile__form-container'>
+          <label className="profile__form-label" htmlFor="email">
             E-mail
           </label>
           <input
-            className="profile-form__input"
+            className="profile__form-input"
             id="email"
             name="email"
             type="email"
             value="pochta@yandex.ru"
           />
           </div>
-          <button className="profile-form__button" type="submit">
+        </fieldset>
+          <button className="profile__form-button" type="submit" title='Редактировать'>
             Редактировать
           </button>
-        </fieldset>
       </form>
-      <button className="profile__logout-button">Выйти из аккаунта</button>
+      <button className="profile__logout-button" title='Выйти из аккаунта'>Выйти из аккаунта</button>
     </section>
       </>
   );

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './Login.css';
-import Logo from '../../images/logo-header.svg'
+import Logo from '../Logo/Logo';
+// import Logo from '../../images/logo-header.svg'
 
 function Login({setViewHeader}) {
   useEffect(() => {
@@ -8,9 +9,10 @@ function Login({setViewHeader}) {
   }, [])
   return (
     <section className="login">
-      <header className='login__header'>
-        <img className='login__header-logo' src={Logo} alt='Логотип в виде белой латинской буквы С в зеленом круге'/>
-      </header>
+      <Logo />
+      {/* <header className='login__header'> */}
+        {/* <img className='login__header-logo' src={Logo} alt='Логотип в виде белой латинской буквы С в зеленом круге'/> */}
+      {/* </header> */}
       <h1 className="login__title">Рады видеть!</h1>
       <form className="login__form">
         <label for="email" className="login__label">

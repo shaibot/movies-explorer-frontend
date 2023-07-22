@@ -6,7 +6,7 @@ import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 function SearchForm() {
   return (
   <>
-    <form className="search-form section">
+    <form className="search-form">
       <img
         className="search-form__icon"
         src={SearchIcon}

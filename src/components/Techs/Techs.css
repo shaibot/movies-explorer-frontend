@@ -1,8 +1,5 @@
 .techs {
-  margin: 0 auto;
-  padding: 100px 70px;
-  background-color: #272727;
-  box-sizing: border-box;
+    background-color: #272727;
 }
 
 .techs__title {
@@ -11,6 +8,7 @@
 }
 
 .techs__description {
+  padding-top: 30px;
   max-width: 460px;
   width: 100%;
   margin: 0 auto 100px;
@@ -92,6 +90,7 @@
   .techs__description {
     max-width: 460px;
     margin-bottom: 83px;
+    padding-top: 21px;
   }
 
   .techs__technologies {
@@ -117,6 +116,7 @@
 .techs__description {
   max-width: 292px;
   margin-bottom: 50px;
+  padding-top: 0;
 }
 
 .techs__text {

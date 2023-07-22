@@ -18,7 +18,7 @@
 }
 
 .checkbox__input::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 6px;
   top: 6px;
@@ -32,7 +32,7 @@
 
 .checkbox__input:checked::after {
   transform: translateX(calc(50% - 20px));
-  background-color: #A0A0A0;
+  background-color: #a0a0a0;
 }
 
 .checkbox__input:checked {
@@ -45,7 +45,20 @@
   line-height: 18px;
 }
 
-@media screen and (max-width: 440px){
+@media screen and (max-width: 800px) {
+  .checkbox {
+    margin-bottom: 132px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .checkbox {
+    margin-bottom: 90px;
+  }
+.checkbox__input {
+  height: 19px;
+}
+
   .checkbox__capture {
     font-size: 11px;
   }

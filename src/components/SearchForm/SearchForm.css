@@ -1,10 +1,10 @@
 .search-form {
   border-bottom: 1px solid #424242;
   width: 100%;
-  margin: 0 auto 30px;
+  margin: 0 auto 31px;
   display: flex;
   justify-content: space-between;
-  padding-top: 144px;
+  padding-left: 6px;
   padding-bottom: 13px;
   box-sizing: border-box;
 }
@@ -24,6 +24,7 @@
 }
 
 .search-form__button {
+  padding: 0;
   background-image: url(../../images/find.svg);
   max-width: 34px;
   width: 100%;
@@ -40,8 +41,11 @@
   height: 34px;
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 400px) {
   .search-form {
+    max-width: 292px;
+    padding-left: 0;
+    padding-bottom: 8px;
     margin-bottom: 43px;
   }
   .search-form__icon {

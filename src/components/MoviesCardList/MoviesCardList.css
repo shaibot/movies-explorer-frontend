@@ -4,7 +4,7 @@
   margin: 0 auto 78px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 60px;
+  row-gap: 57px;
   column-gap: 30px;
   grid-template-rows: repeat(4, 1fr);
 }
@@ -12,14 +12,15 @@
 @media screen and (max-width: 800px) {
   .movies-cardlist {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 47px;
+    row-gap: 45px;
+    margin-bottom: 60px;
   }
 }
 
 @media screen and (max-width: 440px) {
   .movies-cardlist {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 63px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 36px;
   }
 }

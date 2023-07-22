@@ -1,17 +1,20 @@
 .movies-content {
-  padding: 154px 70px 0;
+  padding-top: 144px;
 }
 
 @media screen and (max-width: 800px) {
   .movies-content {
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 160px;
+    padding-bottom: 100px;
   }
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 400px) {
   .movies-content {
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 167px;
   }
 }

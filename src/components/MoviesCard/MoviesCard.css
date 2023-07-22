@@ -9,7 +9,7 @@
   width: 100%;
   min-height: 168px;
   object-fit: fill;
-  margin: 0 0 28px;
+  margin: 0 0 14px;
 }
 
 .movies-card__info {
@@ -66,11 +66,23 @@
   background: #2f2f2f;
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 800px) {
+  .movies-card__image {
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 400px) {
   .movies-card {
     margin: 0 auto;
     max-width: 300px;
+    min-height: 199px;
   }
+
+  .movies-card__image {
+    margin-bottom: 16px;
+  }
+
   .movies-card__title {
     font-size: 12px;
   }

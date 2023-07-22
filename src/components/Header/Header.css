@@ -35,9 +35,14 @@
 
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 400px) {
   .header {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 14px;
+    padding-right: 18px;
+  }
+  .header__burger{
+    width: 34px;
+    height: 37px;
+    background-size: cover;
   }
 }

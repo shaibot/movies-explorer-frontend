@@ -12,6 +12,7 @@ import Header from '../Header/Header';
 
 import './App.css';
 import '../../blocks/Content/Content.css'
+import PageNotFound from '../PageNotFound/PageNotFound';
 
 function App() {
   const [isLogged, setIsLogged] = React.useState(false);
@@ -19,10 +20,7 @@ function App() {
   const location = useLocation();
 
  // Проверяем, нужно ли отображать Footer на текущей странице
- const shouldShowFooter =
- location.pathname !== '/profile' &&
- location.pathname !== '/signup' &&
- location.pathname !== '/signin';
+ const shouldShowFooter = ['/movies', '/saved-movies', '/'].includes(location.pathname);
 
   return (
     <div className="page">
@@ -35,6 +33,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/signin" element={<Login setViewHeader={setViewHeader} />} />
           <Route path="/signup" element={<Register setViewHeader={setViewHeader}/>} />
+          <Route path="*" element={<PageNotFound setViewHeader={setViewHeader} />} />
         </Routes>
       </main>
       {shouldShowFooter && <Footer />}

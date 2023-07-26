@@ -1,9 +1,11 @@
 .page-not-found {
   max-width: 400px;
-  margin: 228px auto 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 228px;
+  padding-bottom: 30px;
 }
 
 .page-not-found__title {
@@ -33,7 +35,7 @@
 @media screen and (max-width: 415px) {
   .page-not-found {
     max-width: 300px;
-    margin: 311px auto 0;
+    padding-top: 332px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +43,8 @@
 
   .page-not-found__title {
     font-size: 80px;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
+    font-weight: 400;
   }
 
   .page-not-found__text {

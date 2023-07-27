@@ -11,6 +11,7 @@
   z-index: 999;
   left: 0;
   right: 0;top: 0;
+  max-width: 1280px;
 }
 .header__burger{
   display: none;
@@ -32,7 +33,6 @@
   .header__burger{
     display: block;
   }
-
 }
 
 @media screen and (max-width: 400px) {

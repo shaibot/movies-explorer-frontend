@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import Logo from '../../images/logo-header.svg';
+import Logo from '../Logo/Logo';
+
 import './Register.css';
 
 function Register({ setViewHeader }) {
@@ -19,6 +20,7 @@ function Register({ setViewHeader }) {
           type="text"
           className="register__input"
           value={'Виталий'}
+          required
         />
         <label for="email" className="register__label">
           E-mail:
@@ -28,11 +30,17 @@ function Register({ setViewHeader }) {
           type="email"
           className="register__input"
           value={'pochta@yandex.ru'}
+          required
         />
         <label for="password" className="register__label">
           Пароль
         </label>
-        <input for="password" type="password" className="register__input" />
+        <input
+          for="password"
+          type="password"
+          className="register__input"
+          required
+        />
         <button type="submit" className="register__register-button">
           Зарегистрироваться
         </button>

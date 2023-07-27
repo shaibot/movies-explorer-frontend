@@ -6,7 +6,7 @@ import More from '../More/More.js';
 
 function Movies() {
   return (
-      <section className="movies-content section">
+      <section className="movies-content">
         <SearchForm />
         <MoviesCardList />
         <More />

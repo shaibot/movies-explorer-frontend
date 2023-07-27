@@ -15,7 +15,7 @@ import './App.css';
 import '../../blocks/Content/Content.css'
 
 function App() {
-  const [isLogged, setIsLogged] = React.useState(false);
+  const [isLogged, setIsLogged] = React.useState(true);
   const [viewHeader, setViewHeader] = useState(true)
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
@@ -35,7 +35,7 @@ useEffect(() => {
     { viewHeader &&  <Header isLogged={isLogged} />}
       <main className="content">
       {isLoading ? (
-          <Preloader /> // Conditionally render the Preloader
+          <Preloader />
         ) : (
         <Routes>
           <Route path="/" element={<Main />} />
@@ -43,7 +43,7 @@ useEffect(() => {
           <Route path="/saved-movies" element={<SavedMovies />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/signin" element={<Login setViewHeader={setViewHeader} />} />
-          <Route path="/signup" element={<Register setViewHeader={setViewHeader}/>} />
+          <Route path="/signup" element={<Register setViewHeader={setViewHeader} />} />
           <Route path="*" element={<PageNotFound setViewHeader={setViewHeader} />} />
         </Routes>
         )}

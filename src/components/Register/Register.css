@@ -47,6 +47,11 @@
   font-size: 14px;
   font-weight: 500;
   box-sizing: border-box;
+  cursor: pointer;
+}
+
+.register__register-button:hover {
+  opacity: 0.800000011920929;
 }
 
 .register__login {
@@ -61,6 +66,10 @@
   color: #4285f4;
   text-align: center;
   font-size: 14px;
+}
+
+.register__login-link:hover {
+  opacity: 0.699999988079071;
 }
 
 @media screen and (max-width: 800px) {

@@ -68,6 +68,10 @@
   cursor: pointer;
 }
 
+.link:hover {
+  opacity: 0.699999988079071;
+}
+
 @media screen and (max-width: 800px) {
   .portfolio {
     padding-left: 50px;
@@ -81,7 +85,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .portfolio {
     padding: 0 14px 50px;
   }

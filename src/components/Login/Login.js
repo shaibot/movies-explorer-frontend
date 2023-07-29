@@ -1,38 +1,45 @@
 import React, { useEffect } from 'react';
-import './Login.css';
+import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
+import './Login.css';
 
-function Login({setViewHeader}) {
+function Login({ setViewHeader }) {
   useEffect(() => {
-    setViewHeader(false)
-  }, [])
+    setViewHeader(false);
+  }, []);
   return (
-    <section className="login">
+    <section className="register login">
       <Logo />
       <h1 className="login__title">Рады видеть!</h1>
       <form className="login__form">
-        <label for="email" className="login__label">
+        <label htmlFor="email" className="login__label">
           E-mail:
         </label>
         <input
           id="email"
           type="email"
           className="login__input"
-          value={'pochta@yandex.ru'}
+          defaultValue={'pochta@yandex.ru'}
+          required
         />
-        <label for="password" className="login__label">
+        <label htmlFor="password" className="login__label">
           Пароль
         </label>
-        <input for="password" type="password" className="login__input" />
+        <input
+          htmlFor="password"
+          type="password"
+          className="login__input"
+          required
+        />
         <button type="submit" className="login__login-button">
           Войти
         </button>
       </form>
       <p className="login__login">
         Ещё не зарегистрированы?{' '}
-        <a href="#" className="login__login-link">
+        <Link to="/signup" className="login__login-link">
           Регистрация
-        </a>
+        </Link>
       </p>
     </section>
   );

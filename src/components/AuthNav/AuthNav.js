@@ -1,23 +1,24 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AuthNav.css';
 
 function AuthNav({burger, setBurger}) {
+  const navigate = useNavigate();
 
-  const handleClick = () => {
-    console.log('authNav: click');
+  const handleClick = (path) => {
+    navigate(path);
   };
-  console.log(burger)
 
   return (
-    <nav className={`nav ${burger ? 'burger-active' : ''}`}>
-      <button onClick={() => setBurger(false)} className='close_burger'></button>
-      <button className="nav__btn" type="button" onClick={handleClick}>
+    <nav className={`header__nav ${burger ? 'burger-active' : ''}`}>
+      <button onClick={() => setBurger(false)} className='header__close-burger'></button>
+      <button className="header__nav-btn" type="button" onClick={() => handleClick('/signup')}>
         Регистрация
       </button>
       <button
-        className="nav__btn nav__btn_type_login"
+        className="header__nav-btn header__nav-btn_type_login"
         type="button"
-        onClick={handleClick}
+        onClick={() => handleClick('/signin')}
       >
         Войти
       </button>

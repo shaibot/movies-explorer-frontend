@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import headerLogo from '../../images/logo-header.svg';
 import Navigation from '../Navigation/Navigation';
 import AuthNav from '../AuthNav/AuthNav';
@@ -13,11 +13,12 @@ function Header({ isLogged }) {
 
   return (
     <header className="header">
-      <img
+     <Link to="/" className="header__logo-link link">
+     <img
         className="header__logo"
         src={headerLogo}
         alt="Логотип в виде латинской С в зеленом круге"
-      />
+      /></Link>
       <div onClick={(e) => setBurger(true)} className="header__burger"></div>
       {isLogged ? (<Navigation burger={burger} setBurger={setBurger} />
       ) : (

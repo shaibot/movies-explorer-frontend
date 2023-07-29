@@ -19,6 +19,11 @@
   width: 44px;
   height: 44px;
   background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.header__burger:hover {
+  opacity: 0.699999988079071;
 }
 
 .header__logo {

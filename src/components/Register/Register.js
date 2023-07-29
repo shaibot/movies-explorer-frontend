@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import Logo from '../Logo/Logo';
+import { Link } from 'react-router-dom';
 
+import Logo from '../Logo/Logo';
 import './Register.css';
 
 function Register({ setViewHeader }) {
@@ -12,31 +13,31 @@ function Register({ setViewHeader }) {
       <Logo />
       <h1 className="register__title">Добро пожаловать!</h1>
       <form className="register__form">
-        <label for="name" className="register__label">
+        <label htmlFor="name" className="register__label">
           Имя
         </label>
         <input
           id="name"
           type="text"
           className="register__input"
-          value={'Виталий'}
+          defaultValue={'Виталий'}
           required
         />
-        <label for="email" className="register__label">
+        <label htmlFor="email" className="register__label">
           E-mail:
         </label>
         <input
           id="email"
           type="email"
           className="register__input"
-          value={'pochta@yandex.ru'}
+          defaultValue={'pochta@yandex.ru'}
           required
         />
-        <label for="password" className="register__label">
+        <label htmlFor="password" className="register__label">
           Пароль
         </label>
         <input
-          for="password"
+          htmlFor="password"
           type="password"
           className="register__input"
           required
@@ -47,9 +48,9 @@ function Register({ setViewHeader }) {
       </form>
       <p className="register__login">
         Уже зарегистрированы?{' '}
-        <a href="#" className="register__login-link">
+        <Link to="/signin" className="register__login-link">
           Войти
-        </a>
+        </Link>
       </p>
     </section>
   );

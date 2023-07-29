@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import headerLogoProfile from '../../images/profile.svg';
 import './Navigation.css';
 
@@ -7,35 +8,35 @@ function Navigation({ burger, setBurger }) {
     <section className={`header__navigation ${burger ? 'burger-active' : ''}`}>
       <button
         onClick={() => setBurger(false)}
-        className="close_burger"
+        className="header__close-burger"
       ></button>
       <nav className='header__menu'>
         <ul className="header__links">
           <li className="header__item">
-            <a className="header__link main-href" href="#">
+            <Link className="header__link main-href link" to="/">
               Главная
-            </a>
+              </Link>
           </li>
-          <li className="header__item underline">
-            <a className="header__link" href="#">
+          <li className="header__item underline ">
+            <Link className="header__link link" to="/movies">
               Фильмы
-            </a>
+              </Link>
           </li>
           <li className="header__item">
-            <a className="header__link" href="#">
+            <Link className="header__link link" to="/saved-movies">
               Сохраненные фильмы
-            </a>
+              </Link>
           </li>
         </ul>
       </nav>
-      <div className="header__profile" href="#">
-        <a className="header__link font">Аккаунт</a>
+      <Link className="header__profile" to="/profile">
+        <p className="header__link font link">Аккаунт</p>
         <img
           className="header__profile-icon"
           alt="Логотип в виде силуэта человека"
           src={headerLogoProfile}
         />
-      </div>
+      </Link>
     </section>
   );
 }

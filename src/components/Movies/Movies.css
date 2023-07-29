@@ -1,5 +1,7 @@
 .movies-content {
-  padding-top: 144px;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 144px 70px 0;
 }
 
 @media screen and (max-width: 800px) {

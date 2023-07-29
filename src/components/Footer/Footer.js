@@ -12,14 +12,14 @@ function Footer() {
         <nav className="footer__naviganion-links">
           <ul className="footer__list-links">
             <li>
-              <a className="footer__link" href="#">
+              <p className="footer__link">
                 Яндекс.Практикум
-              </a>
+              </p>
             </li>
             <li>
-              <a className="footer__link" href="#">
+              <p className="footer__link">
                 Github
-              </a>
+              </p>
             </li>
           </ul>
         </nav>

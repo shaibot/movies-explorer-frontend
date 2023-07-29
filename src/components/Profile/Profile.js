@@ -16,7 +16,7 @@ function Profile() {
             className="profile__form-input"
             id="name"
             name="name"
-            type="text" value="Виталий"
+            type="text" defaultValue="Виталий"
           />
           </div>
           <div className='profile__form-container'>
@@ -28,7 +28,7 @@ function Profile() {
             id="email"
             name="email"
             type="email"
-            value="pochta@yandex.ru"
+            defaultValue="pochta@yandex.ru"
           />
           </div>
         </fieldset>

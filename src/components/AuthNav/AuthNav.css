@@ -1,4 +1,4 @@
-.nav {
+.header__nav {
   width: 100%;
   max-width: 183px;
   display: flex;
@@ -7,7 +7,7 @@
   height: 32px;
 }
 
-.nav__btn {
+.header__nav-btn {
   background: none;
   border: none;
   color: #fff;
@@ -20,7 +20,7 @@
   padding: 0;
 }
 
-.nav__btn_type_login {
+.header__nav-btn_type_login {
   border-radius: 3px;
   background: #3ddc84;
   color: #000;
@@ -29,7 +29,7 @@
   width: 76px;
   height: 32px;
 }
-.close_burger{
+.header__close-burger{
     width: 27px;
     height: 27px;
     position: absolute;
@@ -44,7 +44,7 @@
 }
 
 @media screen and (max-width: 800px){
-  .nav{
+  .header__nav{
     position: fixed;
     top: 0;
     max-width: 520px;
@@ -57,8 +57,9 @@
     z-index: 999;
     display: none;
   }
-  .close_burger{
+  .header__close-burger{
     display: block;
+    cursor: pointer;
   }
   .burger-active{
     display: flex;
@@ -66,7 +67,7 @@
 }
 
 @media screen and (max-width: 800px){
-  .close_burger{
+  .header__close-burger{
     top: 15px;
     right: 15px;
   }

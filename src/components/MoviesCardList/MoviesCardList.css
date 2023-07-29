@@ -1,6 +1,5 @@
 .movies-cardlist {
   width: 100%;
-  /* max-width: 1140px; */
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

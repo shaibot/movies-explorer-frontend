@@ -38,16 +38,12 @@
   .header__burger{
     display: block;
   }
-}
 
-@media screen and (max-width: 400px) {
-  .header {
-    padding-left: 14px;
-    padding-right: 18px;
+  .header__close-burger{
+    display: block;
+    cursor: pointer;
   }
-  .header__burger{
-    width: 34px;
-    height: 37px;
-    background-size: cover;
-  }
+  .burger-active{
+    display: flex;
+   }
 }

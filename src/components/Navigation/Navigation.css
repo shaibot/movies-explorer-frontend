@@ -42,6 +42,21 @@
 .header__link_is-active {
   font-weight: 500px;
 }
+
+.header__close-burger{
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: none;
+  background-image: url(/src/images/closeBtn.svg);
+  background-color: #ffffff00;
+  background-size: cover;
+  border: none;
+  padding: 0;
+}
+
 .main-href {
   display: none;
 }
@@ -101,6 +116,27 @@
     width: 30px;
     height: 30px;
   }
+
+  /* .header__nav{
+    position: fixed;
+    top: 0;
+    max-width: 520px;
+    height: 100vh;
+    right: 0;
+    background: #202020;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+    z-index: 999;
+    display: none;
+  }*/
+  .header__close-burger{
+    display: block;
+    cursor: pointer;
+  }
+  .burger-active{
+    display: flex;
+   } 
 }
 
 @media screen and (max-width: 400px) {
@@ -119,4 +155,10 @@
 .header__profile {
   bottom: 48px;
 }
+
+.header__close-burger{
+  top: 15px;
+  right: 15px;
 }
+}
+

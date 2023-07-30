@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import headerLogoProfile from '../../images/profile.svg';
 import './Navigation.css';
 
 function Navigation({ burger, setBurger }) {
+  const [burger, setBurger] = useState(false);
+  
   return (
     <section className={`header__navigation ${burger ? 'burger-active' : ''}`}>
+      <div onClick={(e) => setBurger(true)} className="header__burger"></div>
       <button
         onClick={() => setBurger(false)}
         className="header__close-burger"

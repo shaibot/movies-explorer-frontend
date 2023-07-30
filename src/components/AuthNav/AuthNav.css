@@ -30,33 +30,27 @@
   height: 32px;
 }
 
-
-/* @media screen and (max-width: 800px){
-  .header__nav{
-    position: fixed;
-    top: 0;
-    max-width: 520px;
-    height: 100vh;
-    right: 0;
-    background: #202020;
-    flex-direction: column;
-    justify-content: center;
-    gap: 22px;
-    z-index: 999;
-    display: none;
-  }
-  .header__close-burger{
+/* @media screen and (max-width: 800px) {
+  .header__close-burger {
     display: block;
     cursor: pointer;
   }
-  .burger-active{
+  .burger-active {
     display: flex;
-   }
-}
-
-@media screen and (max-width: 400px){
-  .header__close-burger{
-    top: 15px;
-    right: 15px;
   }
 } */
+
+@media screen and (max-width: 400px) {
+  .header__nav {
+    max-width: 132px;
+  }
+
+  .header__nav-btn {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .header__nav-btn_type_login {
+    width: 54px;
+height: 26px;
+  }
+}

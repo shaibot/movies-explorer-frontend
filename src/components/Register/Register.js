@@ -9,7 +9,7 @@ function Register({ setViewHeader }) {
     setViewHeader(false);
   }, []);
   return (
-    <section className="register">
+    <section className="register login">
       <Logo />
       <h1 className="register__title">Добро пожаловать!</h1>
       <form className="register__form">

@@ -27,7 +27,7 @@ function MoviesCardList() {
       title: 'Movie Title 2',
       duration: '1ч 17м',
       imageUrl: Kinoalmanakh,
-      isLiked: false,
+      isLiked: true,
       onLikeClick: () => console.log('Like button clicked for Movie Title 2'),
     },
     {

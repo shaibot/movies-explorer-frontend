@@ -59,6 +59,7 @@
 
 .main-href {
   display: none;
+  /* visibility: hidden; */
 }
 
 @media (max-width: 800px) {
@@ -117,19 +118,6 @@
     height: 30px;
   }
 
-  /* .header__nav{
-    position: fixed;
-    top: 0;
-    max-width: 520px;
-    height: 100vh;
-    right: 0;
-    background: #202020;
-    flex-direction: column;
-    justify-content: center;
-    gap: 22px;
-    z-index: 999;
-    display: none;
-  }*/
   .header__close-burger{
     display: block;
     cursor: pointer;

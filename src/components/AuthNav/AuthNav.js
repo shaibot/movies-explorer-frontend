@@ -11,7 +11,6 @@ function AuthNav() {
 
   return (
     <nav className="header__nav">
-      {/* <button onClick={() => setBurger(false)} className='header__close-burger'></button> */}
       <button className="header__nav-btn" type="button" onClick={() => handleClick('/signup')}>
         Регистрация
       </button>

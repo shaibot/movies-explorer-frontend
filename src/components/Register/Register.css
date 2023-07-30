@@ -7,7 +7,7 @@
   max-width: 396px;
   font-size: 24px;
   font-weight: 500;
-  margin: 0 auto 32px;
+  margin: 41px auto 32px;
 }
 
 .register__form {
@@ -82,29 +82,30 @@
 @media screen and (max-width: 400px) {
   .register {
     padding-top: 56px;
+    padding-bottom: 0;
   }
 
-.register__title {
-  max-width: 260px;
-  margin-bottom: 74px;
-  text-align: center;
-}
+  .register__title {
+    max-width: 260px;
+    margin-bottom: 74px;
+    text-align: center;
+  }
 
-.register__form {
-  max-width: 260px;
-}
+  .register__form {
+    max-width: 260px;
+  }
 
-.register__register-button {
-  margin: 165px auto 14px;
-  height: 45px;
-  font-size: 12px;
-}
+  .register__register-button {
+    margin: 165px auto 14px;
+    height: 45px;
+    font-size: 12px;
+  }
 
-.register__login {
-  font-size: 12px;
-}
+  .register__login {
+    font-size: 12px;
+  }
 
-.register__login-link {
-  font-size: 12px;
-}
+  .register__login-link {
+    font-size: 12px;
+  }
 }

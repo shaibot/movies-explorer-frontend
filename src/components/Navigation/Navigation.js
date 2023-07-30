@@ -4,19 +4,17 @@ import headerLogoProfile from '../../images/profile.svg';
 import './Navigation.css';
 
 function Navigation({ burger, setBurger }) {
-  const [burger, setBurger] = useState(false);
   
   return (
     <section className={`header__navigation ${burger ? 'burger-active' : ''}`}>
-      <div onClick={(e) => setBurger(true)} className="header__burger"></div>
       <button
         onClick={() => setBurger(false)}
         className="header__close-burger"
       ></button>
       <nav className='header__menu'>
         <ul className="header__links">
-          <li className="header__item">
-            <Link className="header__link main-href link" to="/">
+          <li className="header__item main-href">
+            <Link className="header__link link" to="/">
               Главная
               </Link>
           </li>

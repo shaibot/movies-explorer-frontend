@@ -2,20 +2,23 @@ import React, { useState } from 'react';
 import SearchIcon from '../../images/icon-find.svg';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import './SearchForm.css';
+import { getMoviesSearch } from '../../utils/MoviesApi';
 
-function SearchForm() {
+function SearchForm({setSearchform, setMoviesData}) {
   const [movieTitle, setMovieTitle] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // Логика обработки формы
-
-    console.log('Movie title:', movieTitle);
+    setSearchform(movieTitle)
+    const result = await getMoviesSearch(movieTitle)
+    setMoviesData(result)
   };
+
+
+
   return (
     <>
-      <form className="search-form">
+      <form className="search-form" onSubmit={handleSubmit}>
         <img
           className="search-form__icon"
           src={SearchIcon}

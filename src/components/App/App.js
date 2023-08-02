@@ -16,10 +16,10 @@ import '../../blocks/Content/Content.css';
 
 function App() {
   // нужно раскомментировать, чтобы проверить неавторизованного пользователя на главной странице
-  const [isLogged, setIsLogged] = React.useState(false);
+  // const [isLogged, setIsLogged] = React.useState(false);
 
   // нужно раскомментировать, чтобы проверить Авторизованного пользователя:
-  // const [isLogged, setIsLogged] = React.useState(true);
+  const [isLogged, setIsLogged] = React.useState(true);
 
   const [viewHeader, setViewHeader] = useState(true);
   const [isLoading, setIsLoading] = useState(true);

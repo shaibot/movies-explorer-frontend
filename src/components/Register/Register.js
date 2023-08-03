@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { signUp } from '../../utils/MainApi';
 
 import Logo from '../Logo/Logo';
 import './Register.css';
-import { useState } from 'react';
 
 function Register({ setViewHeader }) {
   const [inputs, setInputs] = useState({

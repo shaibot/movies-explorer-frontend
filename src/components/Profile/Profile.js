@@ -1,7 +1,27 @@
+import { useContext, useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import './Profile.css';
+import { URL_MAIN } from '../../utils/MainApi';
+import { userContext } from '../../utils/Context';
 
 function Profile() {
+
+  const {token} = useContext(userContext)
+  console.log(token);
+  useEffect(() => {
+    const userMe = async () => {
+      const response = await fetch(`${URL_MAIN}/users/me/`,{
+        method: 'GET',
+        authorization : token
+      });
+
+      const data = await response.json()
+      console.log(data);
+    }
+
+  userMe()
+  }, [])
+
   return (
     <>
     <section className="profile">

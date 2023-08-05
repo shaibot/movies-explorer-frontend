@@ -6,6 +6,7 @@ import AuthNav from '../AuthNav/AuthNav';
 import './Header.css';
 import Logo from '../Logo/Logo';
 
+
 function Header({ isLogged }) {
   const location = useLocation();
   const [burger, setBurger] = useState(false);

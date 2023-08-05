@@ -1,29 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
-import './Login.css';
 import { signIn } from '../../utils/MainApi';
+import './Login.css';
 
-function Login({ setViewHeader }) {
+function Login({ setIsLogged }) {
+  const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
     email: '',
     password: '',
-  })
+  });
 
-  async function submitForm(e){
+  async function submitForm(e) {
     e.preventDefault();
-    await signIn()
+
+    const isLogged = await signIn(inputs);
+    console.log(isLogged);
+
+    if (isLogged) {
+      navigate('/Movies/');
+      setIsLogged('jwt=' + isLogged);
+      console.log(document.cookie);
+    }
   }
 
-  function changeInput(e){
-    inputs[e.target.id] = e.target.value
-    setInputs({...inputs})
+  function changeInput(e) {
+    inputs[e.target.id] = e.target.value;
+    setInputs({ ...inputs });
   }
 
-  useEffect(() => {
-    setViewHeader(false);
-  }, []);
   return (
     <section className="register login">
       <Logo />
@@ -44,7 +50,7 @@ function Login({ setViewHeader }) {
           Пароль
         </label>
         <input
-          id='password'
+          id="password"
           htmlFor="password"
           type="password"
           className="login__input"

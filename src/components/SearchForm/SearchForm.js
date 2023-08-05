@@ -1,20 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchIcon from '../../images/icon-find.svg';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
-import './SearchForm.css';
 import { getMoviesSearch } from '../../utils/MoviesApi';
+import './SearchForm.css';
 
-function SearchForm({setSearchform, setMoviesData}) {
+function SearchForm({ setSearchform, setMoviesData }) {
   const [movieTitle, setMovieTitle] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setSearchform(movieTitle)
-    const result = await getMoviesSearch(movieTitle)
-    setMoviesData(result)
+    setSearchform(movieTitle);
+    const result = await getMoviesSearch(movieTitle);
+    setMoviesData(result);
+
+    // Сохранение данных в localStorage
+  localStorage.setItem('searchQuery', movieTitle);
+  localStorage.setItem('searchResults', JSON.stringify(result));
   };
 
-
+  useEffect(() => {
+    const savedQuery = localStorage.getItem('searchQuery');
+    if (savedQuery) {
+      setMovieTitle(savedQuery);
+    }
+  
+    const savedResults = localStorage.getItem('searchResults');
+    if (savedResults) {
+      setMoviesData(JSON.parse(savedResults));
+    }
+  }, []);
 
   return (
     <>
@@ -34,7 +48,6 @@ function SearchForm({setSearchform, setMoviesData}) {
         />
         <button className="search-form__button" type="submit" />
       </form>
-      <FilterCheckbox />
     </>
   );
 }

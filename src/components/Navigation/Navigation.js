@@ -4,7 +4,7 @@ import headerLogoProfile from '../../images/profile.svg';
 import './Navigation.css';
 
 function Navigation({ burger, setBurger }) {
-  
+
   return (
     <section className={`header__navigation ${burger ? 'burger-active' : ''}`}>
       <button
@@ -19,12 +19,12 @@ function Navigation({ burger, setBurger }) {
               </Link>
           </li>
           <li className="header__item underline ">
-            <Link className="header__link link" to="/movies">
+            <Link className="header__link link" to="/Movies">
               Фильмы
               </Link>
           </li>
           <li className="header__item">
-            <Link className="header__link link" to="/saved-movies">
+            <Link className="header__link link" to="/movies">
               Сохраненные фильмы
               </Link>
           </li>

@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { signUp } from '../../utils/MainApi';
 
 import Logo from '../Logo/Logo';
 import './Register.css';
+import { useState } from 'react';
 
-function Register({ setViewHeader }) {
+function Register({ }) {
+
+  const navigate = useNavigate()
+
   const [inputs, setInputs] = useState({
     name: '',
     email: '',
@@ -17,14 +21,12 @@ function Register({ setViewHeader }) {
     setInputs({...inputs})
   }
 
-  function submitForm(e){
+  async function submitForm(e){
     e.preventDefault()
-    signUp(inputs)
+    const bool = await signUp(inputs)
+    if(bool) navigate('../Movies/')
   }
 
-  useEffect(() => {
-    setViewHeader(false);
-  }, []);
   return (
     <section className="register login">
       <Logo />

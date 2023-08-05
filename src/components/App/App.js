@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { userContext } from '../../utils/Context';
 
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
@@ -16,10 +17,10 @@ import '../../blocks/Content/Content.css';
 
 function App() {
   // нужно раскомментировать, чтобы проверить неавторизованного пользователя на главной странице
-  // const [isLogged, setIsLogged] = React.useState(false);
+  const [isLogged, setIsLogged] = useState(useContext(userContext));
 
   // нужно раскомментировать, чтобы проверить Авторизованного пользователя:
-  const [isLogged, setIsLogged] = React.useState(true);
+  // const [isLogged, setIsLogged] = React.useState(true);
 
   const [viewHeader, setViewHeader] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -32,38 +33,44 @@ function App() {
   }, []);
 
   // Проверяем, нужно ли отображать Footer на текущей странице
-  const shouldShowFooter = ['/movies', '/saved-movies', '/'].includes(
+  const shouldShowFooter = ['/Movies/', '/movies', '/'].includes(
     location.pathname
   );
-
+  const shouldShowHeader = ['/Movies/', '/movies', '/', '/profile'].includes(
+    location.pathname
+  );
   return (
     <div className="page">
-      {viewHeader && <Header isLogged={isLogged} setIsLogged={setIsLogged} />}
-      <main className="content">
-        {isLoading ? (
-          <Preloader />
-        ) : (
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/saved-movies" element={<SavedMovies />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route
-              path="/signin"
-              element={<Login setViewHeader={setViewHeader} />}
-            />
-            <Route
-              path="/signup"
-              element={<Register setViewHeader={setViewHeader} />}
-            />
-            <Route
-              path="*"
-              element={<PageNotFound setViewHeader={setViewHeader} />}
-            />
-          </Routes>
+      <userContext.Provider value={isLogged}>
+        {shouldShowHeader && (
+          <Header isLogged={isLogged} setIsLogged={setIsLogged} />
         )}
-      </main>
-      {shouldShowFooter && <Footer />}
+        <main className="content">
+          {isLoading ? (
+            <Preloader />
+          ) : (
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="/Movies" element={<Movies />} />
+              <Route path="/movies" element={<SavedMovies />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route
+                path="/signin"
+                element={<Login setIsLogged={setIsLogged} />}
+              />
+              <Route
+                path="/signup"
+                element={<Register setIsLogged={setIsLogged} />}
+              />
+              <Route
+                path="*"
+                element={<PageNotFound setViewHeader={setViewHeader} />}
+              />
+            </Routes>
+          )}
+        </main>
+        {shouldShowFooter && <Footer />}
+      </userContext.Provider>
     </div>
   );
 }

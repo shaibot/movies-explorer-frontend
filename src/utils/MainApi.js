@@ -1,4 +1,4 @@
-const URL_MAIN = 'http://localhost:3001';
+const URL_MAIN = 'https://api.movie-exp.nomoredomains.rocks';
 let token
 
 function checkResponse(response) {

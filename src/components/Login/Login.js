@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import Logo from '../Logo/Logo';
+// import { useForm } from '../../utils/Validation';
 import { signIn } from '../../utils/MainApi';
+import Logo from '../Logo/Logo';
 import './Login.css';
 
 function Login({ setIsLogged }) {
+  //
+  // const { errors } = useForm();
+  //
   const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
@@ -43,14 +47,14 @@ function Login({ setIsLogged }) {
           required
           onChange={changeInput}
         />
-         <span
+         {/* <span
             id='email-error'
             className={`login__error ${
-              error.email ? 'login__error_visible' : ''
+              errors.email ? 'login__error_visible' : ''
             }`}
           >
-            {error.email || ''}
-          </span>
+            {errors.email || ''}
+          </span> */}
         <label htmlFor="password" className="login__label">
           Пароль
         </label>
@@ -63,14 +67,14 @@ function Login({ setIsLogged }) {
           required
           onChange={changeInput}
         />
-        <span
+        {/* <span
             id='password-error'
             className={`login__error ${
-              error.password ? 'login__error_visible' : ''
+              errors.password ? 'login__error_visible' : ''
             }`}
           >
-            {error.password || ''}
-          </span>
+            {errors.password || ''}
+          </span> */}
         <button type="submit" className="login__login-button">
           Войти
         </button>

@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { userContext } from '../../utils/Context';
 import { EditProfileFunc, signOut } from '../../utils/MainApi';
-import handleChange from '../../utils/Validation';
+import { handleChange } from '../../utils/Validation';
 import './Profile.css';
 
 

@@ -16,12 +16,9 @@ function Login({ setIsLogged }) {
     e.preventDefault();
 
     const isLogged = await signIn(inputs);
-    console.log(isLogged);
-
     if (isLogged) {
       navigate('/Movies/');
-      setIsLogged('jwt=' + isLogged);
-      console.log(document.cookie);
+      setIsLogged(isLogged);
     }
   }
 
@@ -46,6 +43,14 @@ function Login({ setIsLogged }) {
           required
           onChange={changeInput}
         />
+         <span
+            id='email-error'
+            className={`login__error ${
+              error.email ? 'login__error_visible' : ''
+            }`}
+          >
+            {error.email || ''}
+          </span>
         <label htmlFor="password" className="login__label">
           Пароль
         </label>
@@ -58,6 +63,14 @@ function Login({ setIsLogged }) {
           required
           onChange={changeInput}
         />
+        <span
+            id='password-error'
+            className={`login__error ${
+              error.password ? 'login__error_visible' : ''
+            }`}
+          >
+            {error.password || ''}
+          </span>
         <button type="submit" className="login__login-button">
           Войти
         </button>

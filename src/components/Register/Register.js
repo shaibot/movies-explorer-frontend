@@ -1,30 +1,28 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signUp } from '../../utils/MainApi';
 
 import Logo from '../Logo/Logo';
 import './Register.css';
-import { useState } from 'react';
 
-function Register({ }) {
-
-  const navigate = useNavigate()
+function Register({}) {
+  const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
     name: '',
     email: '',
-    password: ''
-  })
+    password: '',
+  });
 
-  function changeInput(e){
-    inputs[e.target.id] = e.target.value
-    setInputs({...inputs})
+  function changeInput(e) {
+    inputs[e.target.id] = e.target.value;
+    setInputs({ ...inputs });
   }
 
-  async function submitForm(e){
-    e.preventDefault()
-    const bool = await signUp(inputs)
-    if(bool) navigate('../Movies/')
+  async function submitForm(e) {
+    e.preventDefault();
+    const bool = await signUp(inputs);
+    if (bool) navigate('../Movies/');
   }
 
   return (
@@ -58,7 +56,7 @@ function Register({ }) {
           Пароль
         </label>
         <input
-          id='password'
+          id="password"
           htmlFor="password"
           type="password"
           className="register__input"

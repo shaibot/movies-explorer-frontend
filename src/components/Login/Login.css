@@ -54,6 +54,16 @@
   opacity: 0.800000011920929;
 }
 
+.login__login-button_disabled {
+  color: #c2c2c2;
+  background: #f8f8f8;
+  cursor: not-allowed;
+}
+
+.login__login-button_disabled:hover {
+  opacity: 1;
+}
+
 .login__login {
   color: #8b8b8b;
   text-align: center;

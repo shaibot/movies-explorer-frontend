@@ -1,32 +1,51 @@
 import { useContext, useEffect, useState } from 'react';
-import Header from '../Header/Header';
-import './Profile.css';
-import { URL_MAIN } from '../../utils/MainApi';
+import { useNavigate } from 'react-router-dom';
 import { userContext } from '../../utils/Context';
+import { EditProfileFunc, signOut } from '../../utils/MainApi';
+import handleChange from '../../utils/Validation';
+import './Profile.css';
 
-function Profile() {
 
-  const {token} = useContext(userContext)
-  console.log(token);
-  useEffect(() => {
-    const userMe = async () => {
-      const response = await fetch(`${URL_MAIN}/users/me/`,{
-        method: 'GET',
-        authorization : token
-      });
+function Profile({setIsLogged}) {
+  const [isValid, setIsValid] = useState(false);
+  const navigate = useNavigate();
+  const {name, email} = useContext(userContext)
+  const [profile, setProfile] = useState({name, email})
+  const [disabledBtn, setDisabledBtn] = useState(true)
+  const [profileInput, setProfileInput] = useState({
+    name: profile.name ,
+    email: profile.email ,
+  })
 
-      const data = await response.json()
-      console.log(data);
+  const changeInput = (e) => {
+    const value = e.target.value
+    setDisabledBtn(handleChange(e, isValid, setIsValid))
+    setProfileInput({...profileInput, [e.target.name]: value})
+  }
+
+  const editSubmit = async (e) => {
+    e.preventDefault()
+    const EditProfile = await EditProfileFunc(profileInput)
+    setIsLogged(EditProfile.data)
+    setProfile(EditProfile.data)
+  }
+
+  const logOut = async (e) => {
+    if (await signOut()){
+      navigate('/');
+      setIsLogged({})
     }
+  }
 
-  userMe()
-  }, [])
+  useEffect(() => {
+    setProfileInput({...profile})
+  },[profile])
 
   return (
     <>
     <section className="profile">
-      <h2 className="profile__welcome">Привет, Виталий!</h2>
-      <form className="profile__form">
+      <h2 className="profile__welcome">{`Привет, ${profile.name}`}</h2>
+      <form className="profile__form" onSubmit={editSubmit}>
         <fieldset className="profile__form-fieldset">
           <div className='profile__form-container'>
           <label className="profile__form-label" htmlFor="name">
@@ -36,7 +55,9 @@ function Profile() {
             className="profile__form-input"
             id="name"
             name="name"
-            type="text" defaultValue="Виталий"
+            type="text"
+            value={profileInput.name}
+            onChange={changeInput}
           />
           </div>
           <div className='profile__form-container'>
@@ -48,15 +69,16 @@ function Profile() {
             id="email"
             name="email"
             type="email"
-            defaultValue="pochta@yandex.ru"
+            value={profileInput.email}
+            onChange={changeInput}
           />
           </div>
         </fieldset>
-          <button className="profile__form-button" type="submit" title='Редактировать'>
+          <button disabled={!disabledBtn} className={`profile__form-button ${!disabledBtn ? 'profile__form-button' : ''}`} type="submit" title='Редактировать' >
             Редактировать
           </button>
       </form>
-      <button className="profile__logout-button" title='Выйти из аккаунта'>Выйти из аккаунта</button>
+      <button className="profile__logout-button" title='Выйти из аккаунта' onClick={logOut}>Выйти из аккаунта</button>
     </section>
       </>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { userContext } from '../../utils/Context';
+import { userMe } from '../../utils/MainApi';
 
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
@@ -16,6 +17,7 @@ import './App.css';
 import '../../blocks/Content/Content.css';
 
 function App() {
+
   // нужно раскомментировать, чтобы проверить неавторизованного пользователя на главной странице
   const [isLogged, setIsLogged] = useState(useContext(userContext));
 
@@ -27,6 +29,7 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
+    document.cookie = ''
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -53,7 +56,7 @@ function App() {
               <Route path="/" element={<Main />} />
               <Route path="/Movies" element={<Movies />} />
               <Route path="/movies" element={<SavedMovies />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Profile isLogged={isLogged}  setIsLogged ={setIsLogged}/>} />
               <Route
                 path="/signin"
                 element={<Login setIsLogged={setIsLogged} />}

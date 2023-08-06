@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import headerLogo from '../../images/logo-header.svg';
 import Navigation from '../Navigation/Navigation';
@@ -11,7 +11,12 @@ function Header({ isLogged }) {
   const location = useLocation();
   const [burger, setBurger] = useState(false);
   const hideAuthNavPaths = ['/movies', '/saved-movies'];
+  const [visibility, setVisibility] = useState(false)
   const shouldHideAuthNav = hideAuthNavPaths.includes(location.pathname);
+
+  useEffect(() => {
+    setVisibility(isLogged.name ? true : false )
+  }, [isLogged])
 
   return (
     <header className="header">
@@ -22,10 +27,10 @@ function Header({ isLogged }) {
           alt="Логотип в виде латинской С в зеленом круге"
         />
       </Link>
-      {isLogged && (
+      {visibility && (
         <div onClick={(e) => setBurger(true)} className="header__burger"></div>
       )}
-      {isLogged ? (
+      {visibility ? (
         <Navigation burger={burger} setBurger={setBurger} />
       ) : shouldHideAuthNav ? null : (
         <AuthNav />

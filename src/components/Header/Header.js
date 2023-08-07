@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import headerLogo from '../../images/logo-header.svg';
 import Navigation from '../Navigation/Navigation';
 import AuthNav from '../AuthNav/AuthNav';
 import './Header.css';
 import Logo from '../Logo/Logo';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 
-function Header({ isLogged }) {
+function Header() {
+  const { isLogged } = useContext(CurrentUserContext);
   const location = useLocation();
   const [burger, setBurger] = useState(false);
   const hideAuthNavPaths = ['/movies', '/saved-movies'];
@@ -15,7 +17,7 @@ function Header({ isLogged }) {
   const shouldHideAuthNav = hideAuthNavPaths.includes(location.pathname);
 
   useEffect(() => {
-    setVisibility(isLogged.name ? true : false )
+    setVisibility(!!isLogged )
   }, [isLogged])
 
   return (

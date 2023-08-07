@@ -1,17 +1,20 @@
-import React, { useEffect } from 'react';
-
 import './PageNotFound.css';
+import { useNavigate } from 'react-router-dom';
 
-function PageNotFound ({setViewHeader}) {
-  useEffect(() => {
-    setViewHeader(false)
-  }, [])
+function PageNotFound() {
+  const navigate = useNavigate();
 
   return (
     <section className="page-not-found">
-    <h1 className='page-not-found__title'>404</h1>
-<p className='page-not-found__text'>Страница не найдена</p>
-<a className='page-not-found__link-back'>Назад</a>
+      <h1 className="page-not-found__title">404</h1>
+      <p className="page-not-found__text">Страница не найдена</p>
+      <button
+        type={'button'}
+        className="page-not-found__link-back"
+        onClick={() => navigate(-1)}
+      >
+        Назад
+      </button>
     </section>
   );
 }

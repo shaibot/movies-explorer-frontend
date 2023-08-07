@@ -23,6 +23,9 @@
 }
 
 .page-not-found__link-back {
+  border: none;
+  background-color: transparent;
+  padding: 0;
   color: #4285f4;
   text-align: center;
   font-size: 14px;
@@ -54,5 +57,12 @@
 
   .page-not-found__link-back {
     font-size: 12px;
+  }
+}
+
+@media (hover: hover) {
+  .page-not-found__link-back:hover {
+    cursor: pointer;
+    opacity: .8;
   }
 }

@@ -2,3 +2,7 @@
 @import url(./vendor/fonts/fonts.css);
 
 @import url(./blocks/section.css);
+
+:root {
+  --color-error: #EE3465;
+}

@@ -2,6 +2,6 @@
 
 Пулреквест: [https://github.com/shaibot/movies-explorer-frontend/pull/2]
 
-Frontend: [movie-exp.nomoredomains.rocks]
+Frontend: [https://movie-exp.nomoredomains.rocks]
 
 IP ВМ: 158.160.20.69

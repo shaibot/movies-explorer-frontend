@@ -1,16 +1,17 @@
-const URL_MOVIES =  'https://api.nomoreparties.co/beatfilm-movies'
+import { URL_MOVIES_API } from './config.global';
 
-const getMoviesApi = async () => {
-  const response = await fetch(URL_MOVIES);
-  const data = await response.json();
-  return data;
-}
-
-const getMoviesSearch = async (str) => {
-  const reg = new RegExp(str, 'g', 'i');
-  const arr = await getMoviesApi();
-  return await arr.filter(item => reg.test(item.nameRU) || reg.test(item.nameEN) || reg.test(item.description))
-}
-
-
-export { getMoviesApi, getMoviesSearch }
+export const getMovies = () => {
+  return fetch(URL_MOVIES_API, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return res.text().then((text) => {
+        throw JSON.parse(text).message || JSON.parse(text).error;
+      });
+    });
+};

@@ -1,47 +1,29 @@
-import React, { useEffect, useState } from 'react';
 import SearchForm from '../SearchForm/SearchForm.js';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
-import More from '../More/More.js';
-import FilterCheckbox from '../FilterCheckbox/FilterCheckbox.js';
 import './Movies.css';
+import { useFilter } from '../../hooks/useFilter';
 
-function Movies() {
-  const [moviesData, setMoviesData] = useState([]);
-  const [searchForm, setSearchform] = useState('');
-  const [countFilms, setCountFilms] = useState(0);
-  const [shortFilmToggle, setShortFilmToggle] = useState(false);
+function Movies({ movies, savedMovies, onSave, onRemove }) {
+  const {
+    filteredMovies,
+    savedQuery,
+    handleSubmit,
+    searchStatus,
+  } = useFilter({ movies, isSavedMoviesPage: false });
 
-  useEffect(() => {
-    let filteredMovies = moviesData;
-
-    if (shortFilmToggle) {
-      filteredMovies = moviesData.filter((movie) => movie.duration <= 40);
-    }
-    
-    let count;
-    if (window.innerWidth > 1100) count = 12;
-    else if (window.innerWidth > 680) count = 8;
-    else count = 5;
-    setCountFilms(count);
-  }, [shortFilmToggle, moviesData]);
 
   return (
     <section className="movies-content">
-      <SearchForm setSearchform={setSearchform} setMoviesData={setMoviesData} />
-      <FilterCheckbox
-        shortFilmToggle={shortFilmToggle}
-        setShortFilmToggle={setShortFilmToggle}
+      <SearchForm
+        onSubmit={handleSubmit}
+        savedQuery={savedQuery}
       />
       <MoviesCardList
-        value={searchForm}
-        moviesData={moviesData}
-        setMoviesData={setMoviesData}
-        countFilms={countFilms}
-      />
-      <More
-        setCountFilms={setCountFilms}
-        value={searchForm}
-        countFilms={countFilms}
+        movies={filteredMovies}
+        savedMovies={savedMovies}
+        searchStatus={searchStatus}
+        onSave={onSave}
+        onRemove={onRemove}
       />
     </section>
   );

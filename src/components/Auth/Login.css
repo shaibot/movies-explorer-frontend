@@ -11,7 +11,7 @@
   margin: 41px auto 32px;
 }
 
-.login__form {
+.auth__form {
   display: flex;
   flex-direction: column;
   max-width: 396px;
@@ -50,11 +50,11 @@
   padding: 15px;
 }
 
-.login__input:invalid {
+.auth__input_type_invalid {
   color: var(--color-error);
 }
 
-.login__error {
+.auth__error {
   padding: 0;
   color: var(--color-error);
   font-weight: 400;
@@ -129,7 +129,7 @@
     text-align: center;
   }
 
-  .login__form {
+  .auth__form {
     max-width: 260px;
   }
 

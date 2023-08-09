@@ -1,8 +1,10 @@
+@import url(./SearchForm.animation.css);
+
 .search-form {
   max-width: 1280px;
   border-bottom: 1px solid #424242;
   width: 100%;
-  margin: 0 auto 31px;
+  margin: 0 auto 15px;
   display: flex;
   justify-content: space-between;
   padding-left: 6px;
@@ -10,7 +12,12 @@
   box-sizing: border-box;
 }
 
+.search-form_type_error {
+  animation: error-input 2s;
+}
+
 .search-form__input {
+  outline: none;
   color: #fff;
   font-weight: 500;
   font-size: 28px;
@@ -28,6 +35,10 @@
   color: #8B8B8B;
 }
 
+.search-form__input:focus::placeholder {
+  color: #202020;
+}
+
 .search-form__button {
   padding: 0;
   background-image: url(../../images/find.svg);
@@ -43,12 +54,94 @@
 }
 
 .search-form__button:hover {
-  opacity: 0.800000011920929;
+  opacity: 0.8;
 }
 
 .search-form__icon {
   width: 34px;
   height: 34px;
+}
+
+.search-form__label {
+  padding-top: 14px;
+  cursor: pointer;
+  --bg-checkbox-active: #3ddc84;
+  --bg-checkbox-inactive: #343434;
+  --color-switcher-active: #ffffff;
+  --color-switcher-inactive: #A0A0A0;
+  --width: 36px;
+  --height: 20px;
+  --offset: 5px;
+  --duration: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  transition: var(--duration);
+}
+
+.search-form__checkbox {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.search-form__checkbox-span {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: var(--bg-checkbox-inactive);
+}
+
+.search-form__checkbox-span::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  width: 10px;
+  height: 10px;
+
+  background-color: var(--color-switcher-inactive);
+
+  border-radius: 50%;
+
+  transition: var(--duration);
+}
+
+.search-form__checkbox:checked ~ .search-form__checkbox-span {
+  background-color: var(--bg-checkbox-active);
+}
+
+.search-form__checkbox:checked ~ .search-form__checkbox-span::before {
+  background-color: var(--color-switcher-active);
+  left: calc(var(--width) - var(--height) + var(--offset));
+  right: 5px;
+  transition: var(--duration);
+}
+
+.search__checkbox-caption {
+  font-size: 14px;
+  line-height: 18px; /* 128.571% */
+  margin: 0;
+}
+
+@media (hover: hover) {
+  .search-form__label:hover {
+    opacity: .8;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .search-form__checkbox {
+    height: 19px;
+  }
+
+  .search__checkbox-caption {
+    font-size: 11px;
+  }
 }
 
 @media screen and (max-width: 445px) {
@@ -64,5 +157,8 @@
   .search-form__input {
     font-size: 18px;
     text-align: left;
+  }
+  .search-form__label {
+    padding-top: 0;
   }
 }

@@ -1,17 +1,7 @@
-import React, { useState } from 'react';
 import './MoviesCard.css';
+import { MOVIES_URL } from '../../utils/config.global';
 
-function MoviesCard({ image, title, duration, trailerLink, isLiked }) {
-  // Создаем состояние с помощью хука useState.
-  // isSaved - переменная, которая хранит информацию о том, сохранена ли карточка.
-  // setIsSaved - функция, которая позволяет изменять значение isSaved.
-  const [isSaved, setIsSaved] = useState(false);
-  // Функция обработки клика по кнопке.
-  const handleButtonClick = () => {
-    // При клике на кнопку меняем значение isSaved на противоположное с помощью setIsSaved.
-    setIsSaved(!isSaved);
-  };
-
+function MoviesCard({ movie, isLiked, isSavedMoviesPage, onSave, onRemove }) {
   const formatDuration = (duration) => {
     const hours = Math.floor(duration / 60);
     const minutes = duration % 60;
@@ -23,34 +13,44 @@ function MoviesCard({ image, title, duration, trailerLink, isLiked }) {
   };
 
   const openTrailerLink = () => {
-    window.open(`${trailerLink}`);
+    window.open(`${movie.trailerLink}`);
+  };
+
+  const formatImage = () => {
+    if (isSavedMoviesPage) {
+      return movie.image;
+    } else {
+      return MOVIES_URL + movie.image.url;
+    }
   };
 
   return (
-    <li className="movies-card" onClick={openTrailerLink}>
-      <img
-        src={`https://api.nomoreparties.co${image.url}`}
-        alt={title}
-        className="movies-card__image"
+    <li className="movies-card">
+      <img src={formatImage()}
+           alt={`Обложка фильма ${movie.nameRU}`}
+           className="movies-card__image"
+           onClick={() => openTrailerLink()}
       />
-      <button className={'movies-card__delete'} onClick={handleButtonClick} />
-      {/* Условное отображение кнопки в зависимости от значения isSaved. */}
-      {/* Если isSaved равно false, отображается кнопка "Сохранить", иначе отображается кнопка "Понравилось". */}
-      {isSaved ? (
-        <button
-          className={`movies-card__like ${
-            isLiked ? 'movies-card__like_active' : ''
-          }`}
-          onClick={handleButtonClick}
+      {isSavedMoviesPage &&
+        <button className={'movies-card__delete'}
+                onClick={() => onRemove(movie._id)}
         />
-      ) : (
-        <button className="movies-card__save" onClick={handleButtonClick}>
+      }
+      {isLiked && !isSavedMoviesPage &&
+        <button className={`movies-card__like ${isLiked ? 'movies-card__like_active' : ''}`}
+                onClick={() => onRemove(movie._id)}
+        />
+      }
+      {!isSavedMoviesPage && !isLiked &&
+        <button className="movies-card__save"
+                onClick={() => onSave(movie)}
+        >
           Сохранить
         </button>
-      )}
+      }
       <div className="movies-card__info">
-        <h2 className="movies-card__title">{title}</h2>
-        <p className="movies-card__duration">{formatDuration(duration)}</p>
+        <h2 className="movies-card__title">{movie.nameRU}</h2>
+        <p className="movies-card__duration">{formatDuration(movie.duration)}</p>
       </div>
     </li>
   );

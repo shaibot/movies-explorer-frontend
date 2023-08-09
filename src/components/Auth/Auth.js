@@ -6,11 +6,12 @@ import './Login.css';
 import useFormAndValidation from '../../hooks/useFormAndValidation';
 import { useContext } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import { ROUTER } from '../../utils/config.global';
+import { REGEXP_EMAIL, ROUTER } from '../../utils/config.global';
+import Preloader from '../Preloader/Preloader';
 
-function Auth({ type }) {
+function Auth({ type, onLogin, onRegister, reqStatus }) {
   const {
-    values, setValues, errors, setErrors, isValid, setValid, handleChange
+    values, errors, setErrors, isValid, setValid, handleChange
   } = useFormAndValidation();
   const { isLogged } = useContext(CurrentUserContext);
 
@@ -51,35 +52,63 @@ function Auth({ type }) {
     </p>,
   };
 
+  const handleChangeEmail = (evt) => {
+    handleChange(evt);
+
+    const { name, value } = evt.target;
+
+    if (name === 'email' && !REGEXP_EMAIL.test(value)) {
+      setValid(false);
+      setErrors((errors) => {
+        return {
+          ...errors,
+          email: 'Формат почты: name@gmail.com',
+        };
+      });
+    }
+  };
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    if (type === 'login') {
+      onLogin({
+        email: values.email,
+        password: values.password,
+      });
+    } else {
+      onRegister({
+        name: values.name,
+        email: values.email,
+        password: values.password,
+      });
+    }
   };
 
   return !isLogged ? (
     <section className="register login">
       <Logo/>
       {renderTitle[type]}
-      <form className="register__form" onSubmit={handleSubmit}>
+      <form className="auth__form" onSubmit={handleSubmit}>
         {type === 'register'
           &&
           <>
             <label className="auth__label">
               <input
                 id="name"
-                name='name'
+                name="name"
                 type="text"
-                className="auth__input"
+                className={`auth__input ${errors.name && 'auth__input_type_invalid'}`}
                 onChange={handleChange}
-                value={values.name}
+                value={values.name ?? ''}
                 minLength={2}
                 maxLength={30}
                 required
               />
-              <span className='auth__span'>Имя:</span>
+              <span className="auth__span">Имя:</span>
             </label>
             <span
-              id='name-error'
-              className='login__error'
+              id="name-error"
+              className="auth__error"
             >
             {errors.name}
           </span>
@@ -88,43 +117,44 @@ function Auth({ type }) {
         <label className="auth__label">
           <input
             id="email"
-            name='email'
+            name="email"
             type="email"
-            className="auth__input"
-            value={values.email}
-            onChange={handleChange}
+            className={`auth__input ${errors.email && 'auth__input_type_invalid'}`}
+            value={values.email ?? ''}
+            onChange={handleChangeEmail}
             required
           />
-          <span className='auth__span'>E-mail:</span>
+          <span className="auth__span">E-mail:</span>
         </label>
 
         <span
-          id='email-error'
-          className='login__error'
+          id="email-error"
+          className="auth__error"
         >
             {errors.email}
           </span>
         <label className="auth__label">
           <input
             id="password"
-            name='password'
-            htmlFor="password"
+            name="password"
             type="password"
-            className="auth__input"
-            value={values.password}
+            className={`auth__input ${errors.password && 'auth__input_type_invalid'}`}
+            value={values.password ?? ''}
             onChange={handleChange}
             minLength={6}
             required
           />
-          <span className='auth__span'>Пароль:</span>
+          <span className="auth__span">Пароль:</span>
         </label>
         <span
-          id='password-error'
-          className='login__error'
+          id="password-error"
+          className="auth__error"
         >
             {errors.password}
           </span>
-        {renderButton[type]}
+        {reqStatus.isLoading
+          ? <Preloader/>
+          : renderButton[type]}
       </form>
       {renderCaption[type]}
     </section>

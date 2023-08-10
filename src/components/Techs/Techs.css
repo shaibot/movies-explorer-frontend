@@ -1,5 +1,5 @@
 .techs {
-    background-color: #272727;
+  background-color: #272727;
 }
 
 .techs__title {
@@ -106,30 +106,32 @@
 }
 
 @media screen and (max-width: 400px) {
-.techs__subtitle {
-  font-size: 30px;
-  line-height: normal;
-  letter-spacing: -1.2px;
-  margin-bottom: 24px;
-}
+  .techs__subtitle {
+    font-size: 30px;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    margin-bottom: 24px;
+  }
 
-.techs__description {
-  max-width: 292px;
-  margin-bottom: 50px;
-  padding-top: 0;
-}
+  .techs__description {
+    max-width: 292px;
+    margin-bottom: 50px;
+    padding-top: 0;
+  }
 
-.techs__text {
-  font-size: 11px;
-  line-height: 16px;
-  letter-spacing: -0.44px;
-}
-.techs__technologies {
-  max-width: 180px;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-.techs__item {
-letter-spacing: -0.48px;
-}
+  .techs__text {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: -0.44px;
+  }
+
+  .techs__technologies {
+    max-width: 180px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .techs__item {
+    letter-spacing: -0.48px;
+  }
 }

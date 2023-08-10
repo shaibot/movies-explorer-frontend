@@ -26,24 +26,28 @@ function MoviesCard({ movie, isLiked, isSavedMoviesPage, onSave, onRemove }) {
 
   return (
     <li className="movies-card">
-      <img src={formatImage()}
-           alt={`Обложка фильма ${movie.nameRU}`}
-           className="movies-card__image"
-           onClick={() => openTrailerLink()}
+      <img
+        src={formatImage()}
+        alt={`Обложка фильма ${movie.nameRU}`}
+        className="movies-card__image"
+        onClick={() => openTrailerLink()}
       />
       {isSavedMoviesPage &&
-        <button className={'movies-card__delete'}
-                onClick={() => onRemove(movie._id)}
+        <button
+          className={'movies-card__delete'}
+          onClick={() => onRemove(movie._id)}
         />
       }
       {isLiked && !isSavedMoviesPage &&
-        <button className={`movies-card__like ${isLiked ? 'movies-card__like_active' : ''}`}
-                onClick={() => onRemove(movie._id)}
+        <button
+          className={`movies-card__like ${isLiked ? 'movies-card__like_active' : ''}`}
+          onClick={() => onRemove(movie._id)}
         />
       }
       {!isSavedMoviesPage && !isLiked &&
-        <button className="movies-card__save"
-                onClick={() => onSave(movie)}
+        <button
+          className="movies-card__save"
+          onClick={() => onSave(movie)}
         >
           Сохранить
         </button>

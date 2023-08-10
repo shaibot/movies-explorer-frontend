@@ -49,8 +49,9 @@
     font-size: 10px;
     line-height: 16px;
   }
+
   .header__nav-btn_type_login {
     width: 54px;
-height: 26px;
+    height: 26px;
   }
 }

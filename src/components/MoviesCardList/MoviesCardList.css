@@ -75,9 +75,11 @@
     row-gap: 36px;
     padding-top: 90px;
   }
+
   .more__btn {
     width: 240px;
   }
+
   .movies-content__error {
     font-size: 16px;
     margin-top: 24px;

@@ -151,13 +151,16 @@
     padding-bottom: 8px;
     margin-bottom: 43px;
   }
+
   .search-form__icon {
     display: none;
   }
+
   .search-form__input {
     font-size: 18px;
     text-align: left;
   }
+
   .search-form__label {
     padding-top: 0;
   }

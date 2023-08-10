@@ -27,15 +27,15 @@
 }
 
 @media screen and (max-width: 400px) {
-.section {
+  .section {
     padding: 68px 18px 70px;
-}
+  }
 
   .section__title {
     width: 100%;
-  font-size: 18px;
-  letter-spacing: -0.72px;
-  padding-bottom: 25px;
-  margin-bottom: 60px;
+    font-size: 18px;
+    letter-spacing: -0.72px;
+    padding-bottom: 25px;
+    margin-bottom: 60px;
   }
 }

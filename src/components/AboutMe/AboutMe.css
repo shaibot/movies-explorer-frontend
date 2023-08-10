@@ -91,20 +91,23 @@
     line-height: 18px;
     margin-bottom: 20px;
   }
+
   .about-me__description {
     font-size: 12px;
     line-height: 18px;
     margin-bottom: 87px;
   }
+
   .about-me__profile {
     max-width: 364px;
   }
 }
 
 @media screen and (max-width: 500px) {
-   .about-me {
+  .about-me {
     padding: 69px 14px 70px;
   }
+
   .about-me__info {
     display: grid;
     grid-template-rows: 352px minmax(194px, 1fr);
@@ -118,6 +121,7 @@
     height: 352px;
     grid-row: 1;
   }
+
   .about-me__profile {
     grid-row: 2;
   }

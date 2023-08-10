@@ -13,7 +13,7 @@ function SavedMovies({ movies, onSave, onRemove }) {
   } = useFilter({ movies, isSavedMoviesPage: true });
 
   return (
-    <section className='saved-movies'>
+    <section className="saved-movies">
       <SearchForm
         savedQuery={savedQuery}
         onSubmit={handleSubmit}

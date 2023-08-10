@@ -66,7 +66,7 @@
 }
 
 .movies-card__like_active {
-display: block;
+  display: block;
 }
 
 .movies-card__delete {
@@ -119,22 +119,27 @@ display: block;
     visibility: hidden;
     opacity: 0;
   }
+
   .movies-card__save:hover {
     visibility: visible;
     opacity: .8;
   }
+
   .movies-card__image:hover ~ .movies-card__save {
     visibility: visible;
     opacity: 1;
   }
+
   .movies-card__delete {
     visibility: hidden;
     opacity: 0;
   }
+
   .movies-card__delete:hover {
     visibility: visible;
     opacity: .8;
   }
+
   .movies-card__image:hover ~ .movies-card__delete {
     visibility: visible;
     opacity: 1;

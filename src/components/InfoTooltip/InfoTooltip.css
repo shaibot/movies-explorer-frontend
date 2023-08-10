@@ -80,9 +80,11 @@
     max-width: 282px;
     padding: 25px 22px;
   }
+
   .popup__container_type_tooltip {
     max-width: 282px;
   }
+
   .popup__close {
     width: 20px;
     height: 20px;
@@ -90,6 +92,7 @@
     right: -3px;
     background-image: url(../../images/mobile-close-icon.svg);
   }
+
   .popup__title {
     font-size: 18px;
     line-height: 22px;

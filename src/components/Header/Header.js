@@ -10,14 +10,14 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 function Header() {
   const { isLogged } = useContext(CurrentUserContext);
   const location = useLocation();
-  const [burger, setBurger] = useState(false);
-  const hideAuthNavPaths = ['/movies', '/saved-movies'];
-  const [visibility, setVisibility] = useState(false)
+  const [ burger, setBurger ] = useState(false);
+  const hideAuthNavPaths = [ '/movies', '/saved-movies' ];
+  const [ visibility, setVisibility ] = useState(false);
   const shouldHideAuthNav = hideAuthNavPaths.includes(location.pathname);
 
   useEffect(() => {
-    setVisibility(!!isLogged )
-  }, [isLogged])
+    setVisibility(!!isLogged);
+  }, [ isLogged ]);
 
   return (
     <header className="header">
@@ -32,9 +32,9 @@ function Header() {
         <div onClick={() => setBurger(true)} className="header__burger"></div>
       )}
       {visibility ? (
-        <Navigation burger={burger} setBurger={setBurger} />
+        <Navigation burger={burger} setBurger={setBurger}/>
       ) : shouldHideAuthNav ? null : (
-        <AuthNav />
+        <AuthNav/>
       )}
     </header>
   );

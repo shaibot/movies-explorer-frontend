@@ -6,7 +6,7 @@ import { ROUTER } from '../../utils/config.global';
 function Navigation({ burger, setBurger }) {
   const handleClick = () => {
     setBurger(false);
-  }
+  };
 
   return (
     <section className={`header__navigation ${burger ? 'burger-active' : ''}`}>

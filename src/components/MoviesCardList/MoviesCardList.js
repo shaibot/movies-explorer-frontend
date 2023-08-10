@@ -83,12 +83,13 @@ function MoviesCardList({ movies, savedMovies, searchStatus, onSave, onRemove })
 
   return (
     searchStatus.isLoading
-    ? <div className='movies-content__preloader-wrapper'><Preloader /></div>
-    : <>
+      ? <div className="movies-content__preloader-wrapper"><Preloader/></div>
+      : <>
         {searchStatus.isError
-          ? <div className='movies-content__error-wrapper'>
-            {searchStatus.message === 'Найдите фильм себе по душе (˵ •̀ ᴗ - ˵ )' && <span className='movies-content__error-arrow' />}
-            <h2 className='movies-content__error'>{searchStatus.message}</h2>
+          ? <div className="movies-content__error-wrapper">
+            {searchStatus.message === 'Найдите фильм себе по душе (˵ •̀ ᴗ - ˵ )' &&
+              <span className="movies-content__error-arrow"/>}
+            <h2 className="movies-content__error">{searchStatus.message}</h2>
           </div>
           : <ul className="movies-cardlist">
             {renderMovies()}

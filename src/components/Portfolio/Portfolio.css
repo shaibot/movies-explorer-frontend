@@ -95,15 +95,18 @@
     padding-top: 0;
     font-size: 14px;
   }
+
   .portfolio__list-item:not(:last-child) {
-  margin-bottom: 6px;
-}
+    margin-bottom: 6px;
+  }
+
   .portfolio__item {
     padding-bottom: 19px;
     font-size: 18px;
     line-height: 28px;
     letter-spacing: -0.72px;
   }
+
   .portfolio__btn-arrow {
     width: 12px;
     height: 22px;

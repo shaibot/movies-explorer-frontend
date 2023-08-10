@@ -1,62 +1,62 @@
-// import React, { useState } from 'react';
-// import './MoviesCard.css';
-
-// function MoviesCard(props) {
-//   const [isSaved, setIsSaved] = useState(false);
-
-//   const handleSaveClick = () => {
-//     setIsSaved(true);
-//     // Здесь функция, которая сохранит карточку
-//   };
-//   return (
-//     <div className="movies-card">
-//       <img src={props.imageUrl} alt={props.title} className="movies-card__image" />
-//       {isSaved ? (
-//         <button className="movies-card__like movies-card__like_active" onClick={props.onLikeClick} />
-//         ) : (
-//           <button className="movies-card__save" onClick={handleSaveClick}>Сохранить</button>
-//       )}
-//       <div className="movies-card__info">
-//         <h2 className="movies-card__title">{props.title}</h2>
-//         <p className="movies-card__duration">{props.duration}</p>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default MoviesCard;
-
-
-import React, { useState } from 'react';
 import './MoviesCard.css';
+import { MOVIES_URL } from '../../utils/config.global';
 
-function MoviesCard(props) {
-  // Создаем состояние с помощью хука useState.
-  // isSaved - переменная, которая хранит информацию о том, сохранена ли карточка.
-  // setIsSaved - функция, которая позволяет изменять значение isSaved.
-  const [isSaved, setIsSaved] = useState(false);
+function MoviesCard({ movie, isLiked, isSavedMoviesPage, onSave, onRemove }) {
+  const formatDuration = (duration) => {
+    const hours = Math.floor(duration / 60);
+    const minutes = duration % 60;
 
-  // Функция обработки клика по кнопке.
-  const handleButtonClick = () => {
-    // При клике на кнопку меняем значение isSaved на противоположное с помощью setIsSaved.
-    setIsSaved(!isSaved);
+    const hoursText = hours > 0 ? `${hours}ч` : '';
+    const minutesText = minutes > 0 ? `${minutes}м` : '';
+
+    return `${hoursText} ${minutesText}`;
+  };
+
+  const openTrailerLink = () => {
+    window.open(`${movie.trailerLink}`);
+  };
+
+  const formatImage = () => {
+    if (isSavedMoviesPage) {
+      return movie.image;
+    } else {
+      return MOVIES_URL + movie.image.url;
+    }
   };
 
   return (
-    <div className="movies-card">
-      <img src={props.imageUrl} alt={props.title} className="movies-card__image" />
-      {/* Условное отображение кнопки в зависимости от значения isSaved. */}
-      {/* Если isSaved равно false, отображается кнопка "Сохранить", иначе отображается кнопка "Понравилось". */}
-      {isSaved ? (
-        <button className={`movies-card__like ${props.isLiked ? 'movies-card__like_active' : ''}`} onClick={handleButtonClick} />
-      ) : (
-        <button className="movies-card__save" onClick={handleButtonClick}>Сохранить</button>
-      )}
+    <li className="movies-card">
+      <img
+        src={formatImage()}
+        alt={`Обложка фильма ${movie.nameRU}`}
+        className="movies-card__image"
+        onClick={() => openTrailerLink()}
+      />
+      {isSavedMoviesPage &&
+        <button
+          className={'movies-card__delete'}
+          onClick={() => onRemove(movie._id)}
+        />
+      }
+      {isLiked && !isSavedMoviesPage &&
+        <button
+          className={`movies-card__like ${isLiked ? 'movies-card__like_active' : ''}`}
+          onClick={() => onRemove(movie._id)}
+        />
+      }
+      {!isSavedMoviesPage && !isLiked &&
+        <button
+          className="movies-card__save"
+          onClick={() => onSave(movie)}
+        >
+          Сохранить
+        </button>
+      }
       <div className="movies-card__info">
-        <h2 className="movies-card__title">{props.title}</h2>
-        <p className="movies-card__duration">{props.duration}</p>
+        <h2 className="movies-card__title">{movie.nameRU}</h2>
+        <p className="movies-card__duration">{formatDuration(movie.duration)}</p>
       </div>
-    </div>
+    </li>
   );
 }
 

@@ -87,7 +87,7 @@
 @media screen and (max-width: 500px) {
   .promo {
     padding: 145px 10px 30px;
-      gap: 43px;
+    gap: 43px;
   }
 
   .promo__logo {
@@ -103,6 +103,7 @@
     line-height: 38px;
     letter-spacing: -1.2px;
   }
+
   .promo__learn-more {
     margin-bottom: 80px;
   }

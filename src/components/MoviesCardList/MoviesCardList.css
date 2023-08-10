@@ -2,19 +2,67 @@
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 360px));
+  grid-template-columns: repeat(3, minmax(1px, 360px));
   row-gap: 57px;
   column-gap: 30px;
-  grid-template-rows: repeat(4, 1fr);
-  padding: 0 0 76px;
+  grid-auto-rows: 231px;
+  padding: 118px 0 76px;
   list-style: none;
   align-items: center;
   justify-content: center;
 }
 
+.more {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.more__btn {
+  width: 320px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  color: #fff;
+  padding: 0;
+  margin: 0 auto;
+  background-color: #2F2F2F;
+  cursor: pointer;
+}
+
+.movies-content__error-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 50px;
+}
+
+.movies-content__error {
+  height: 50px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  margin: 20px 0 0;
+}
+
+.movies-content__error-arrow {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url('../../images/up-arrow.svg') center center no-repeat;
+}
+
+.movies-content__preloader-wrapper {
+  height: 50vh;
+}
+
 @media screen and (max-width: 1100px) {
   .movies-cardlist {
-    grid-template-columns: repeat(2, minmax(300px, 360px));
+    grid-template-columns: repeat(2, minmax(1px, 360px));
     row-gap: 45px;
     padding-bottom: 60px;
   }
@@ -25,5 +73,21 @@
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 36px;
+    padding-top: 90px;
+  }
+
+  .more__btn {
+    width: 240px;
+  }
+
+  .movies-content__error {
+    font-size: 16px;
+    margin-top: 24px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .movies-content__error-arrow {
+    display: none;
   }
 }

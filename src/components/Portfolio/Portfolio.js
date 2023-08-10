@@ -13,7 +13,8 @@ function Portfolio() {
             </a>
           </li>
           <li className="portfolio__list-item">
-            <a className="portfolio__item link" href="https://shaibot.github.io/russian-travel/index.html" target="_blank">
+            <a className="portfolio__item link" href="https://shaibot.github.io/russian-travel/index.html"
+               target="_blank">
               Адаптивный сайт
               <button className="portfolio__btn-arrow"></button>
             </a>

@@ -11,7 +11,7 @@
   margin: 41px auto 32px;
 }
 
-.login__form {
+.auth__form {
   display: flex;
   flex-direction: column;
   max-width: 396px;
@@ -19,25 +19,52 @@
   margin: 0 auto;
 }
 
-.login__label {
+.auth__span {
   color: #8b8b8b;
   font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.auth__label {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.login__label:first-child {
   margin: 10px 0;
 }
 
-.login__input {
+.auth__input:focus ~ .auth__span {
+  color: #fff;
+}
+
+.auth__input {
+  outline: none;
   width: 100%;
   border: none;
   border-radius: 8px;
   background-color: #2f2f2f;
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
   font-size: 13px;
   color: #fff;
   padding: 15px;
 }
 
+.auth__input_type_invalid {
+  color: var(--color-error);
+}
+
+.auth__error {
+  padding: 0;
+  color: var(--color-error);
+  font-weight: 400;
+  font-size: 10px;
+  min-height: 23px;
+  opacity: 1;
+}
+
 .login__login-button {
-  margin: 172px auto 16px;
+  margin: 155px auto 16px;
   width: 100%;
   border: none;
   border-radius: 3px;
@@ -51,7 +78,17 @@
 }
 
 .login__login-button:hover {
-  opacity: 0.800000011920929;
+  opacity: 0.8;
+}
+
+.login__login-button:disabled {
+  color: #c2c2c2;
+  background: #f8f8f8;
+  cursor: not-allowed;
+}
+
+.login__login-button_disabled:hover {
+  opacity: 1;
 }
 
 .login__login {
@@ -92,7 +129,7 @@
     text-align: center;
   }
 
-  .login__form {
+  .auth__form {
     max-width: 260px;
   }
 

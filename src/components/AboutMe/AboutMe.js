@@ -20,7 +20,7 @@ function AboutMe() {
             После того, как прошёл курс по&nbsp;веб-разработке, начал заниматься
             фриланс-заказами и&nbsp;ушёл с&nbsp;постоянной работы.
           </p>
-          <a className="about-me__github link" href="https://github.com/shaibot" target='_blank'>
+          <a className="about-me__github link" href="https://github.com/shaibot" target="_blank">
             Github
           </a>
         </div>

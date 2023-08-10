@@ -1,15 +1,15 @@
 .saved-movies {
-    padding: 144px 70px 85px;
+  padding: 144px 70px 85px;
 }
 
 @media screen and (max-width: 800px) {
-    .saved-movies {
-        padding: 160px 30px 35px;
-    }
+  .saved-movies {
+    padding: 160px 30px 35px;
   }
-  
-  @media screen and (max-width: 400px) {
-    .saved-movies {
-        padding: 167px 10px 10px;
-    }
+}
+
+@media screen and (max-width: 400px) {
+  .saved-movies {
+    padding: 167px 10px 10px;
   }
+}

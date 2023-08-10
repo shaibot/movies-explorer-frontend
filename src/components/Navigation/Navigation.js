@@ -1,36 +1,51 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import headerLogoProfile from '../../images/profile.svg';
 import './Navigation.css';
+import { ROUTER } from '../../utils/config.global';
 
 function Navigation({ burger, setBurger }) {
-  
+  const handleClick = () => {
+    setBurger(false);
+  };
+
   return (
     <section className={`header__navigation ${burger ? 'burger-active' : ''}`}>
       <button
         onClick={() => setBurger(false)}
         className="header__close-burger"
       ></button>
-      <nav className='header__menu'>
+      <nav className="header__menu">
         <ul className="header__links">
           <li className="header__item main-href">
-            <Link className="header__link link" to="/">
+            <NavLink
+              className={({ isActive }) => `header__link link ${isActive && 'underline'}`}
+              to={ROUTER.main}
+              onClick={handleClick}
+            >
               Главная
-              </Link>
-          </li>
-          <li className="header__item underline ">
-            <Link className="header__link link" to="/movies">
-              Фильмы
-              </Link>
+            </NavLink>
           </li>
           <li className="header__item">
-            <Link className="header__link link" to="/saved-movies">
+            <NavLink
+              className={({ isActive }) => `header__link link ${isActive && 'underline'}`}
+              to={ROUTER.movies}
+              onClick={handleClick}
+            >
+              Фильмы
+            </NavLink>
+          </li>
+          <li className="header__item">
+            <NavLink
+              className={({ isActive }) => `header__link link ${isActive && 'underline'}`}
+              to={ROUTER.saved}
+              onClick={handleClick}
+            >
               Сохраненные фильмы
-              </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
-      <Link className="header__profile" to="/profile">
+      <Link className="header__profile" to={ROUTER.profile} onClick={handleClick}>
         <p className="header__link font link">Аккаунт</p>
         <img
           className="header__profile-icon"

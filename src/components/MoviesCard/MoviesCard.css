@@ -4,12 +4,14 @@
   min-height: 231px;
   position: relative;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .movies-card__image {
   width: 100%;
-  height: auto;
+  height: 201px;
   margin: 0 0 14px;
+  object-fit: cover;
 }
 
 .movies-card__info {
@@ -36,10 +38,11 @@
   color: #fff;
   cursor: pointer;
   padding: 0;
+  transition: all .2s;
 }
 
 .movies-card__save:hover {
-  opacity: 0.800000011920929;
+  opacity: 0.8;
 }
 
 .movies-card__like {
@@ -55,15 +58,34 @@
   cursor: pointer;
   border: none;
   padding: 0;
-  display: none;
+  transition: all .2s;
 }
 
 .movies-card__like:hover {
-  opacity: 0.800000011920929;
+  opacity: 0.8;
 }
 
 .movies-card__like_active {
-display: block;
+  display: block;
+}
+
+.movies-card__delete {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background-image: url(../../images/close-icon.svg);
+  background-color: transparent;
+  background-size: cover;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: all .2s;
+}
+
+.movies-card__delete:hover {
+  opacity: 0.8;
 }
 
 .movies-card__title {
@@ -92,8 +114,47 @@ display: block;
   background: #2f2f2f;
 }
 
+@media (hover: hover) {
+  .movies-card__save {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .movies-card__save:hover {
+    visibility: visible;
+    opacity: .8;
+  }
+
+  .movies-card__image:hover ~ .movies-card__save {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .movies-card__delete {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .movies-card__delete:hover {
+    visibility: visible;
+    opacity: .8;
+  }
+
+  .movies-card__image:hover ~ .movies-card__delete {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 800px) {
+  .movies-card {
+    max-width: 360px;
+    width: 100%;
+    min-height: 231px;
+  }
+
   .movies-card__image {
+    min-height: 190px;
     margin-bottom: 25px;
   }
 
@@ -106,10 +167,11 @@ display: block;
 @media screen and (max-width: 445px) {
   .movies-card {
     margin: 0 auto;
-    min-height: auto;
+    min-height: 199px;
   }
 
   .movies-card__image {
+    min-height: 168px;
     margin-bottom: 16px;
   }
 

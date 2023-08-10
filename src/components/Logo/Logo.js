@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import LogoIcon from '../../images/logo-header.svg';
 import './Logo.css';
 
-function Logo({ setViewHeader }) {
+function Logo() {
   return (
     <Link to="/" className="register__container-logo">
       <img

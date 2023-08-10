@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -8,18 +9,26 @@ function Footer() {
         Учебный проект Яндекс.Практикум х&nbsp;BeatFilm.
       </div>
       <div className="footer__navigation">
-        <p className="footer__year">&copy;&nbsp;2020</p>
+        <p className="footer__year">&copy;&nbsp;2023</p>
         <nav className="footer__naviganion-links">
           <ul className="footer__list-links">
             <li>
-              <p className="footer__link">
+              <Link
+                to='https://practicum.yandex.ru'
+                className="footer__link"
+                target='_blank'
+              >
                 Яндекс.Практикум
-              </p>
+              </Link>
             </li>
             <li>
-              <p className="footer__link">
+              <Link
+                to='https://github.com/shaibot'
+                className="footer__link"
+                target='_blank'
+              >
                 Github
-              </p>
+              </Link>
             </li>
           </ul>
         </nav>

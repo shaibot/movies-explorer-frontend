@@ -8,7 +8,7 @@
 
 .header__menu {
   max-width: 231px;
-    width: 100%;
+  width: 100%;
 }
 
 .header__profile {
@@ -43,7 +43,7 @@
   font-weight: 500px;
 }
 
-.header__close-burger{
+.header__close-burger {
   width: 27px;
   height: 27px;
   position: absolute;
@@ -83,7 +83,7 @@
   }
 
   .header__item {
-    padding-bottom: 3px;  
+    padding-bottom: 3px;
   }
 
   .header__link {
@@ -101,14 +101,17 @@
     font-weight: 500;
     line-height: 16px;
   }
+
   .header__profile {
     position: absolute;
     bottom: 92px;
   }
+
   .main-href {
     display: block;
     margin-bottom: 1px;
   }
+
   .burger-active {
     display: flex;
   }
@@ -118,13 +121,14 @@
     height: 30px;
   }
 
-  .header__close-burger{
+  .header__close-burger {
     display: block;
     cursor: pointer;
   }
-  .burger-active{
+
+  .burger-active {
     display: flex;
-   } 
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -134,19 +138,19 @@
 
   .header__links {
     gap: 17px;
-}
+  }
 
-.header__item {
-  padding-bottom: 6px;
-}
+  .header__item {
+    padding-bottom: 6px;
+  }
 
-.header__profile {
-  bottom: 48px;
-}
+  .header__profile {
+    bottom: 48px;
+  }
 
-.header__close-burger{
-  top: 15px;
-  right: 15px;
-}
+  .header__close-burger {
+    top: 15px;
+    right: 15px;
+  }
 }
 
